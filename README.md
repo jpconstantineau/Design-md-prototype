@@ -90,6 +90,7 @@ variants share their family's shape, typography, and density to keep mode change
 | HMI (all four) | 4 / 4 / 2px | Segoe UI, tabular numbers | 16px padding, 2px outlines, flat surfaces |
 | Composio Light / Dark | 16 / 12 / 8px | System sans, medium headings, mono code | 24px padding, layered surfaces |
 | Sentry | 18 / 12 / 8px | Rubik, uppercase actions, Monaco-style code | 32px padding, flat violet surfaces |
+| Meta | 32 / 16 / 100px | Montserrat, medium headings | 24px padding, flat retail surfaces |
 
 `theme-styles.css` owns the shared tokens and component rules. Customize `--font-body`,
 `--font-heading`, `--heading-weight`, `--body-leading`, `--radius-*`, `--space-*`,
@@ -101,6 +102,50 @@ Buttons and text fields keep a minimum 44px height. Reduced-motion preferences d
 and hover movement; HMI profiles use no motion by default. Alarm shapes retain their
 semantic meaning. The labeled radius and spacing rulers intentionally remain fixed reference
 samples, while actual component radii and spacing follow the selected profile.
+
+### Component-specific radius audit
+
+The profile summary also reports actual computed radii for ghost buttons, selects,
+search inputs, code blocks, feature cards, and badges. Generic profile tokens are defaults;
+documented component exceptions override them.
+
+| Component | Composio | Sentry | Meta |
+| --- | --- | --- | --- |
+| Primary / secondary button | 8px | 8px | 100px |
+| Ghost button | 8px | 12px | 100px |
+| Text input | 8px | 6px | 8px |
+| Search input | 8px | 6px | 100px |
+| Select | 8px | 8px | 8px |
+| Code block / pane | 12px | 8px | 8px (technical sample adaptation) |
+| Feature card | 16px | 18px | 16px icon card / 32px product card |
+| Quote card | 12px | 12px | 16px |
+| Badge | 9999px | 4px | 100px |
+
+The audit corrected shared-rule specificity that previously overrode Sentry's select and
+code radii, plus its ghost-button and navigation-chrome exceptions. The original eight
+palettes use project-defined profiles; their radii are not prescribed by the HMI standards.
+
+## Meta style
+
+[Meta](meta.html) is a new light retail-inspired page based on the detailed
+[Meta design analysis](https://getdesign.md/meta/design-md) and its
+[source guide](https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/meta/DESIGN.md).
+It uses white and soft-cloud surfaces, pill actions, large rounded product containers,
+black marketing buttons, and a separate cobalt purchase-action sample. The sample action
+only displays local feedback and does not perform a purchase.
+
+Montserrat is the guide's fallback for proprietary Optimistic VF. The variable font and
+its SIL Open Font License are bundled in `assets/fonts/` from the
+[Google Fonts distribution](https://github.com/google/fonts/tree/main/ofl/montserrat).
+No proprietary font or product imagery is included. All brand and reference semantic colors
+appear in the palette. Semantic foreground tokens are darkened for readability; their
+unmodified reference colors remain separately labeled. No dark variant is invented, since
+the guide does not define one.
+
+The shared comparison grids retain the documented playground breakpoints. Meta adds its
+own 480/768px headline sizing and a stacked purchase example below 768px. This adapts the
+store's styling to the existing component playground rather than reproducing a storefront.
+All Meta styling is isolated in `meta.css`; `node build-pages.cjs` also regenerates `meta.html`.
 
 ## Sentry style
 

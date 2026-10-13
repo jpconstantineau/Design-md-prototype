@@ -35,6 +35,9 @@ const themeMap = {
   },
   sentry: {
     label: 'Sentry', accent: '#1f1633'
+  },
+  meta: {
+    label: 'Meta', accent: '#0064e0'
   }
 };
 
@@ -69,6 +72,10 @@ function updateStyleReadout() {
   const tokens = getComputedStyle(root);
   document.querySelectorAll('[data-style-token]').forEach((element) => {
     element.textContent = tokens.getPropertyValue(element.dataset.styleToken).trim();
+  });
+  document.querySelectorAll('[data-radius-selector]').forEach((element) => {
+    const component = document.querySelector(element.dataset.radiusSelector);
+    element.textContent = getComputedStyle(component).borderRadius;
   });
 }
 window.matchMedia('(prefers-reduced-motion: reduce)').addEventListener('change', updateStyleReadout);

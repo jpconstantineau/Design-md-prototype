@@ -130,6 +130,9 @@
 :root[data-theme="sentry"] .x-heading h3 { font-size: clamp(27px, 4vw, 60px); font-weight: 500; line-height: 1.1; }
 :root[data-theme="sentry"] .x-spotlight { background: var(--brand-violet-deep); }
 :root[data-theme="sentry"] .x-code { border-radius: 8px; padding: 16px; }
+:root[data-theme="sentry"] .x-terminal { border-radius: 8px; }
+:root[data-theme="sentry"] .theme-picker { border-radius: 12px; }
+:root[data-theme="sentry"] :is(.ghost-button, .x-button:not(.x-button-primary)) { border-radius: 12px; }
 :root[data-theme="sentry"] .x-gallery :is(pre, code) { font-size: 16px; }
 :root[data-theme="sentry"] .x-gallery pre { white-space: pre; overflow-x: auto; }
 :root[data-theme="sentry"] .x-footer {

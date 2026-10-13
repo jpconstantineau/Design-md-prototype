@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="meta" data-default-theme="meta">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Theme playground for testing CSS color variables across light and dark color schemes."
+    />
+    <meta name="theme-color" content="#0064e0" />
+    <title>Meta — Color Scheme Playground</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="gallery.css" />
+    <link rel="stylesheet" href="theme-styles.css" />
+    <link rel="stylesheet" href="sentry.css" />
+    <link rel="stylesheet" href="palette.css" />
+    <link rel="stylesheet" href="meta.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Design system playground</p>
+          <h1>Meta Theme Playground</h1>
+        </div>
+
+        <div class="theme-picker" role="group" aria-label="Theme selector">
+          <button class="theme-option is-active" data-theme-option="light" type="button">
+            Light
+          </button>
+          <button class="theme-option" data-theme-option="dark" type="button">Dark</button>
+          <button class="theme-option" data-theme-option="sunset" type="button">Sunset</button>
+          <button class="theme-option" data-theme-option="ocean" type="button">Ocean</button>
+          <button class="theme-option" data-theme-option="hmi-light" type="button">HMI Light</button>
+          <button class="theme-option" data-theme-option="hmi-dark" type="button">HMI Dark</button>
+          <button class="theme-option" data-theme-option="hmi-light-cvd" type="button">HMI Light (color-blind)</button>
+          <button class="theme-option" data-theme-option="hmi-dark-cvd" type="button">HMI Dark (color-blind)</button>
+          <a class="theme-option" data-theme-option="composio-light" href="composio-light.html">Composio Light</a>
+          <a class="theme-option" data-theme-option="composio-dark" href="composio-dark.html">Composio Dark</a>
+          <a class="theme-option" data-theme-option="sentry" href="sentry.html">Sentry</a>
+          <a class="theme-option" data-theme-option="meta" href="meta.html">Meta</a>
+        </div>
+      </header>
+
+      <main class="page-grid">
+        <section class="panel style-profile" aria-labelledby="style-profile-title">
+          <p class="section-kicker">Active theme styling</p>
+          <h2 id="style-profile-title" data-style-token="--profile-label">Theme profile</h2>
+          <p>Compare corners, type, density, depth, and motion as you switch themes.
+            Light, dark, and color-blind variants within a family share the same styling.</p>
+          <dl>
+            <div><dt>Typography</dt><dd data-style-token="--font-label"></dd></div>
+            <div><dt>Panel radius</dt><dd data-style-token="--radius-panel"></dd></div>
+            <div><dt>Card radius</dt><dd data-style-token="--radius-card"></dd></div>
+            <div><dt>Button radius</dt><dd data-style-token="--radius-button"></dd></div>
+            <div><dt>Input radius</dt><dd data-style-token="--radius-control"></dd></div>
+            <div><dt>Card padding</dt><dd data-style-token="--space-card"></dd></div>
+            <div><dt>Grid gap</dt><dd data-style-token="--space-gap"></dd></div>
+            <div><dt>Border width</dt><dd data-style-token="--border-width"></dd></div>
+            <div><dt>Depth</dt><dd data-style-token="--elevation-label"></dd></div>
+            <div><dt>Color / hover transition</dt><dd data-style-token="--motion-duration"></dd></div>
+            <div><dt>Ghost button radius</dt><dd data-radius-selector=".ghost-button"></dd></div>
+            <div><dt>Select radius</dt><dd data-radius-selector="#workspace-options"></dd></div>
+            <div><dt>Search radius</dt><dd data-radius-selector="#workspace-search"></dd></div>
+            <div><dt>Code block radius</dt><dd data-radius-selector=".x-code"></dd></div>
+            <div><dt>Feature card radius</dt><dd data-radius-selector=".x-feature"></dd></div>
+            <div><dt>Badge radius</dt><dd data-radius-selector=".x-tag"></dd></div>
+          </dl>
+        </section>
+        <section class="panel hmi-demo" aria-labelledby="hmi-title">
+          <p class="section-kicker">Operator display / sample states</p>
+          <h2 id="hmi-title">Quiet during normal operation. Clear when attention is needed.</h2>
+          <p class="lead">Neutral surfaces keep the process readable. Alarm priorities use color,
+            shape, and text together. Color-blind variants use orange, blue, and purple instead
+            of red-based priority coding; labels remain the same in every HMI theme.</p>
+          <div class="alarm-grid">
+            <div class="alarm-sample normal-state"><span class="alarm-symbol normal-symbol" aria-hidden="true">&#10003;</span><div><strong>Normal / running</strong><p>P-101 pump · No active alarm</p></div></div>
+            <div class="alarm-sample priority-1"><span class="alarm-symbol octagon" aria-hidden="true">!</span><div><strong>P1 · High priority</strong><p>PT-101 · Pressure high-high</p></div></div>
+            <div class="alarm-sample priority-2"><span class="alarm-symbol triangle" aria-hidden="true">!</span><div><strong>P2 · Medium priority</strong><p>LT-202 · Level high</p></div></div>
+            <div class="alarm-sample priority-3"><span class="alarm-symbol square" aria-hidden="true">!</span><div><strong>P3 · Low priority</strong><p>FT-303 · Flow low</p></div></div>
+          </div>
+          <p class="hmi-note">Design study informed by ISA-101, EEMUA 201, and IEC 62682.
+            These are adapted palettes, not a certified HMI or a standard-mandated color scheme.
+            Priority assignments are illustrative.</p>
+        </section>
+        <section class="panel hero-panel">
+          <div class="panel-header">
+            <span class="status-dot"></span>
+            <p>Theme overview</p>
+          </div>
+
+          <div class="hero-content">
+            <div>
+              <p class="section-kicker">Purpose</p>
+              <h2>Evaluate how colors behave across semantic UI states.</h2>
+            </div>
+            <p class="lead">
+              This page demonstrates how a design system reacts when background, surface,
+              border, text, accent, status, and interaction colors are adjusted for light and
+              dark themes.
+            </p>
+          </div>
+
+          <div class="hero-metrics">
+            <div class="metric-card">
+              <span class="metric-label">Background</span>
+              <strong>Page canvas</strong>
+            </div>
+            <div class="metric-card">
+              <span class="metric-label">Surface</span>
+              <strong>Cards / panels</strong>
+            </div>
+            <div class="metric-card">
+              <span class="metric-label">Accent</span>
+              <strong>Actions / focus</strong>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel palette-panel" aria-labelledby="palette-title">
+          <div class="section-heading"><h3 id="palette-title">Complete theme palette</h3><span>Brand, surfaces, accents, and states</span></div>
+          <p>Color patches show the selected theme's tokens and values. Reference illustration colors are labeled separately from UI roles; checkerboards indicate transparency.</p>
+          <div id="theme-palette"></div>
+          <noscript>Enable JavaScript to display the active theme's color patches.</noscript>
+        </section>
+
+        <section class="panel">
+          <div class="section-heading">
+            <h3>Type and content</h3>
+            <span>Text contrast and hierarchy</span>
+          </div>
+
+          <div class="type-demo">
+            <h2>Heading 2 visual rhythm</h2>
+            <p class="lead">
+              Lead text shows how the primary type color interacts with the page background and
+              surface contrast.
+            </p>
+            <p>
+              Body text validates legibility against your chosen background and neutral surfaces,
+              while captions and metadata confirm muted-text readability across the theme.
+            </p>
+            <blockquote>
+              “Contrast is what makes a palette feel intentional. Test both default and semantic
+              color roles to avoid unreadable combinations.”
+            </blockquote>
+            <ul>
+              <li>List item styling reflects border and text color behavior.</li>
+              <li>Links should remain accessible in both light and dark themes.</li>
+              <li><a href="#">Inline links</a> should stand out without overwhelming bystanders.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="section-heading">
+            <h3>Forms and controls</h3>
+            <span>Inputs, states, and outcomes</span>
+          </div>
+
+          <div class="control-stack">
+            <label class="field">
+              <span>Text input</span>
+              <input type="text" value="Sample value" aria-label="Text input sample" />
+            </label>
+
+            <label class="field">
+              <span>Select menu</span>
+              <select aria-label="Select sample">
+                <option>Option A</option>
+                <option>Option B</option>
+                <option>Option C</option>
+              </select>
+            </label>
+
+            <label class="field">
+              <span>Textarea</span>
+              <textarea aria-label="Textarea sample">This area shows how surface and border colors affect typing focus.</textarea>
+            </label>
+
+            <div class="check-grid">
+              <label class="check-row"><input type="checkbox" checked /> Checkbox</label>
+              <label class="check-row"><input type="radio" name="demo-radio" checked /> Radio</label>
+              <label class="check-row"><input type="checkbox" /> Disabled</label>
+            </div>
+
+            <div class="button-row">
+              <button class="primary-button" type="button">Primary action</button>
+              <button class="secondary-button" type="button">Secondary</button>
+              <button class="ghost-button" type="button">Ghost</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="section-heading">
+            <h3>Components</h3>
+            <span>Surface and semantic state testing</span>
+          </div>
+
+          <div class="component-row">
+            <div class="alert alert-advisory">
+              <strong>Advisory</strong>
+              <span>Helpful information and recommendations use the primary color.</span>
+            </div>
+            <div class="alert alert-success">
+              <strong>Success</strong>
+              <span>Positive status color should remain readable and calm.</span>
+            </div>
+            <div class="alert alert-warning">
+              <strong>Warning</strong>
+              <span>Warning states need enough contrast without overpowering the page.</span>
+            </div>
+            <div class="alert alert-danger">
+              <strong>Danger</strong>
+              <span>Destructive states should still read clearly in dark mode.</span>
+            </div>
+          </div>
+
+          <div class="badge-row">
+            <span class="badge badge-neutral">Neutral</span>
+            <span class="badge badge-primary">Primary</span>
+            <span class="badge badge-success">Success</span>
+            <span class="badge badge-warning">Warning</span>
+            <span class="badge badge-danger">Danger</span>
+          </div>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Element</th>
+                <th>Purpose</th>
+                <th>Visual result</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Header</td>
+                <td>Navigation and hierarchy</td>
+                <td>Strong contrast</td>
+              </tr>
+              <tr>
+                <td>Cards</td>
+                <td>Grouping information</td>
+                <td>Clear surface separation</td>
+              </tr>
+              <tr>
+                <td>Buttons</td>
+                <td>Primary callouts</td>
+                <td>High emphasis</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        <!-- Shared additive gallery: original examples above retain their styles. -->
+        <section class="x-gallery" aria-labelledby="extended-title">
+          <header class="x-intro">
+            <p class="x-eyebrow">Extended component library</p>
+            <h2 id="extended-title">One collection.<br /><span class="theme-keyword">Every theme.</span></h2>
+            <p class="sentry-reference">Sentry-inspired styling from the <a href="https://getdesign.md/sentry/design-md">independent design analysis</a>. Rubik stands in for the proprietary display face.</p>
+            <p class="meta-only">Meta-inspired styling from the <a href="https://getdesign.md/meta/design-md">independent store design analysis</a>. Montserrat is the documented fallback for Optimistic VF.</p>
+            <p>Explore richer layouts, interaction states, and design tokens in the current palette.</p>
+            <p class="x-caption">Shared component patterns inspired by the <a href="https://getdesign.md/composio/design-md">Composio design analysis</a>.
+              Colors and styling follow the selected theme.</p>
+          </header>
+
+          <nav class="x-nav" aria-label="Component gallery">
+            <strong>Component explorer</strong>
+            <button class="x-button x-menu" aria-expanded="false" aria-controls="gallery-links" type="button">Menu</button>
+            <div id="gallery-links" class="x-nav-links">
+              <a href="#gallery-cards">Cards</a><a href="#gallery-forms">Forms</a>
+              <a href="#gallery-tokens">Tokens</a><a href="#gallery-responsive">Responsive</a>
+            </div>
+          </nav>
+
+          <section class="x-section" aria-labelledby="terminal-title">
+            <div class="x-heading"><p class="x-eyebrow">01 / Code &amp; activity</p><h3 id="terminal-title">A workspace in four panes</h3><p>Illustrative content. No external services are connected.</p></div>
+            <div class="x-terminal-grid">
+              <article class="x-terminal"><h4>Configuration</h4><pre><code>{
+  "workspace": "design-lab",
+  "environment": "preview",
+  "tools": ["calendar", "files"]
+}</code></pre></article>
+              <article class="x-terminal"><h4>Activity</h4><pre><code>09:41  Preview opened
+09:42  Palette selected
+09:43  Components rendered
+09:44  Ready for review</code></pre></article>
+              <article class="x-terminal"><h4>Available tools</h4><pre><code>calendar   / 12 operations
+files      /  8 operations
+messages   / 16 operations
+tasks      /  6 operations</code></pre></article>
+              <article class="x-terminal"><h4>Environment</h4><pre><code>mode       local preview
+network    disconnected
+status     ready
+changes    unsaved sample</code></pre></article>
+            </div>
+            <div class="x-code"><div class="x-code-bar"><span>Example configuration</span><button class="x-button" id="copy-example" type="button">Copy</button></div><pre><code id="example-code">const preview = { theme: 'current', layout: 'responsive' };
+renderComponents(preview);</code></pre><p id="copy-status" class="x-caption" role="status"></p></div>
+          </section>
+
+          <section id="gallery-cards" class="x-section" aria-labelledby="cards-title">
+            <div class="x-heading"><p class="x-eyebrow">02 / Cards</p><h3 id="cards-title">Different content, shared structure</h3></div>
+            <div class="x-feature-grid">
+              <article class="x-feature"><span class="x-icon" aria-hidden="true">↗</span><h4>Event routing</h4><p>Bring incoming signals into a single place for review.</p><details><summary>Explore pattern</summary><p>A feature card pairs a compact icon, heading, description, and disclosure.</p></details></article>
+              <article class="x-feature"><span class="x-icon" aria-hidden="true">◎</span><h4>Access settings</h4><p>Keep permissions visible alongside each connection.</p><details><summary>Explore pattern</summary><p>Text and icon cues communicate meaning without relying on color alone.</p></details></article>
+              <article class="x-feature"><span class="x-icon" aria-hidden="true">≋</span><h4>Activity history</h4><p>Inspect recent events in a calm, readable interface.</p><details><summary>Explore pattern</summary><p>Surface and border tokens adapt the same card to every theme.</p></details></article>
+            </div>
+            <div class="x-toolkit-grid">
+              <article class="x-toolkit"><span class="x-icon" aria-hidden="true">CA</span><h4>Calendar</h4><p>Appointments &amp; availability</p><span class="x-tag">Ready</span></article>
+              <article class="x-toolkit"><span class="x-icon" aria-hidden="true">FI</span><h4>Files</h4><p>Documents &amp; attachments</p><span class="x-tag">Preview</span></article>
+              <article class="x-toolkit"><span class="x-icon" aria-hidden="true">ME</span><h4>Messages</h4><p>Conversations &amp; updates</p><span class="x-tag">Ready</span></article>
+              <article class="x-toolkit"><span class="x-icon" aria-hidden="true">TA</span><h4>Tasks</h4><p>Assignments &amp; progress</p><span class="x-tag">Sample</span></article>
+            </div>
+            <figure class="x-quote"><blockquote>A useful theme makes the same content feel consistent across every component.</blockquote><figcaption>Sample testimonial · Design review</figcaption></figure>
+            <div class="x-spotlight"><p class="x-eyebrow">Your next comparison</p><h3>Try the same layout in another palette.</h3><a class="x-button x-button-primary" href="#extended-title">Back to the collection</a></div>
+          </section>
+
+          <section id="gallery-forms" class="x-section" aria-labelledby="forms-title">
+            <div class="meta-only meta-product">
+              <div><p class="x-eyebrow">Purchase action / visual sample</p><h3>Explore a different kind of connection.</h3><p>This sample separates the guide's blue purchase action from its black marketing buttons.</p></div>
+              <div class="meta-purchase"><strong>Demo accessory</strong><span>Illustrative item · no checkout</span><button class="x-button meta-buy-cta" id="meta-add-sample" type="button">Add sample</button><p id="meta-cart-status" role="status"></p></div>
+            </div>
+            <div class="x-heading"><p class="x-eyebrow">03 / Forms &amp; actions</p><h3 id="forms-title">A complete setup form</h3><p>Try validation, reveal the sample key, and save locally to this preview.</p></div>
+            <form id="sample-setup" class="x-form" novalidate>
+              <label class="x-field">Contact email<input id="sample-email" name="email" type="email" placeholder="name@example.com" required aria-describedby="email-help email-error" /><small id="email-help">Use a sample address. Nothing is sent.</small><span id="email-error" class="x-error" hidden>Enter an email address in the form name@example.com.</span></label>
+              <div class="x-field"><label for="sample-key">Demo API key</label><div class="x-input-action"><input id="sample-key" type="password" value="demo_key_not_a_secret" autocomplete="off" /><button id="reveal-key" class="x-button" type="button" aria-controls="sample-key" aria-pressed="false">Show</button></div><small>Illustrative value, not a real credential.</small></div>
+              <label class="x-field">Find a workspace<input id="workspace-search" type="search" placeholder="Filter sample workspaces" aria-controls="workspace-options" /><select id="workspace-options" aria-label="Sample workspace"><option>Design lab</option><option>Engineering</option><option>Operations</option></select><small id="workspace-count" role="status">3 workspaces available</small></label>
+              <label class="x-field">Managed setting<input value="Read-only sample" readonly /><small>This field can be selected, but cannot be edited.</small></label>
+              <label class="x-field">Unavailable setting<input value="Requires a connection" disabled /><small>Disabled state example.</small></label>
+              <label class="x-check"><input type="checkbox" role="switch" checked /> Enable preview notifications</label>
+              <div class="x-form-actions"><button class="x-button x-button-primary" type="submit">Save preview</button><button class="x-button" type="reset">Reset</button><button class="x-button x-outline" disabled type="button">Unavailable</button><p id="form-status" role="status"></p></div>
+            </form>
+          </section>
+
+          <section id="gallery-tokens" class="x-section" aria-labelledby="tokens-title">
+            <div class="x-heading"><p class="x-eyebrow">04 / Foundations</p><h3 id="tokens-title">Geometry, rhythm, and depth</h3><p>The radius and spacing rulers show fixed reference values. Actual component styling follows the active theme profile shown at the top of the page.</p></div>
+            <h4>Corner radius</h4><div class="x-radius-row">
+              <div style="--sample-radius:0px">0px</div><div style="--sample-radius:4px">4px</div><div style="--sample-radius:6px">6px</div><div style="--sample-radius:8px">8px</div><div style="--sample-radius:12px">12px</div><div style="--sample-radius:16px">16px</div><div style="--sample-radius:9999px">Pill</div>
+            </div>
+            <h4>Spacing</h4><div class="x-spacing-row">
+              <div><span style="width:4px"></span><code>4</code></div><div><span style="width:8px"></span><code>8</code></div><div><span style="width:12px"></span><code>12</code></div><div><span style="width:16px"></span><code>16</code></div><div><span style="width:20px"></span><code>20</code></div><div><span style="width:24px"></span><code>24</code></div><div><span style="width:32px"></span><code>32</code></div><div><span style="width:48px"></span><code>48</code></div><div><span style="width:96px"></span><code>96px</code></div>
+            </div>
+            <h4>Surface elevation</h4><div class="x-elevation-grid"><div class="x-level-canvas">Canvas</div><div class="x-level-deep">Recessed</div><div class="x-level-card">Card</div><div class="x-level-raised">Raised</div></div>
+            <div class="x-type-grid"><div><span class="x-eyebrow">Display / 500</span><p class="x-display-sample">Clarity at every size.</p></div><div><span class="x-eyebrow">Body / 16px</span><p>Body copy pairs a comfortable line height with a softer text tone.</p><code>Monospace / 13px</code><p><span class="x-tag">New</span> <span class="x-tag">Beta</span> <span class="x-tag">Stable</span></p></div></div>
+          </section>
+
+          <section id="gallery-responsive" class="x-section" aria-labelledby="responsive-title">
+            <div class="x-heading"><p class="x-eyebrow">05 / Responsive behavior</p><h3 id="responsive-title">Watch the layout adapt</h3><p>Current viewport: <output id="viewport-width"></output> · <strong id="viewport-range"></strong></p></div>
+            <div class="x-table-wrap" tabindex="0" role="region" aria-label="Responsive breakpoint table"><table><thead><tr><th>Viewport</th><th>Toolkit cards</th><th>Terminal panes</th><th>Gallery navigation</th></tr></thead><tbody><tr><td>Below 640px</td><td>1 column</td><td>1 column</td><td>Menu button</td></tr><tr><td>640–767px</td><td>2 columns</td><td>2 columns</td><td>Menu button</td></tr><tr><td>768–1023px</td><td>2 columns</td><td>2 columns</td><td>Inline links</td></tr><tr><td>1024px and above</td><td>4 columns</td><td>2 columns</td><td>Inline links</td></tr></tbody></table></div>
+            <p class="x-caption">The page retains its 1200px container cap. Only the new gallery uses these trigger points; existing examples keep their current layout rules.</p>
+          </section>
+          <footer class="x-footer"><div><strong>Explore</strong><a href="#gallery-cards">Card patterns</a><a href="#gallery-forms">Form states</a></div><div><strong>Compare</strong><a href="composio-light.html">Composio Light</a><a href="composio-dark.html">Composio Dark</a></div><div><strong>Reference</strong><a href="https://getdesign.md/composio/design-md">Design analysis</a><span>Independent adaptation</span></div></footer>
+        </section>
+
+      </main>
+    </div>
+
+    <script src="palette.js"></script>
+    <script src="script.js"></script>
+    <script src="gallery.js"></script>
+  </body>
+</html>

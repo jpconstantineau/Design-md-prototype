@@ -67,3 +67,6 @@ function updateViewport() {
 }
 window.addEventListener('resize', updateViewport);
 updateViewport();
+document.querySelector('#meta-add-sample').addEventListener('click', () => {
+  document.querySelector('#meta-cart-status').textContent = 'Sample added to this preview. No purchase was made.';
+});

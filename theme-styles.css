@@ -122,7 +122,7 @@
   --radius-card: 12px;
   --radius-control: 8px;
   --radius-button: 8px;
-  --radius-badge: 999px;
+  --radius-badge: 9999px;
   --space-card: 24px;
   --space-gap: 24px;
   --space-control-y: 10px;
@@ -152,9 +152,9 @@
 :root[data-theme="ocean"] :is(.eyebrow, .section-kicker, .metric-label, .x-eyebrow) { font-family: var(--font-code); }
 :root[data-theme^="hmi-"] body { font-variant-numeric: tabular-nums; }
 :root[data-theme] :is(.panel, .theme-picker, .x-feature, .x-form, .x-terminal-grid, .x-spotlight) { border-radius: var(--radius-panel); }
-:root[data-theme] :is(.metric-card, .swatch, .alert, .x-toolkit, .x-quote, .x-terminal, .x-code, .x-elevation-grid > div, table, .alarm-sample) { border-radius: var(--radius-card); }
+:root[data-theme] :where(.metric-card, .swatch, .alert, .x-toolkit, .x-quote, .x-terminal, .x-code, .x-elevation-grid > div, table, .alarm-sample) { border-radius: var(--radius-card); }
 :root[data-theme] :is(.swatch-color, .x-icon) { border-radius: var(--radius-control); }
-:root[data-theme] :is(input:not([type="checkbox"]):not([type="radio"]), select, textarea) { border-radius: var(--radius-control); }
+:root[data-theme] :where(input:not([type="checkbox"]):not([type="radio"]), select, textarea) { border-radius: var(--radius-control); }
 :root[data-theme] :is(button, .theme-option, .x-button) { border-radius: var(--radius-button); }
 :root[data-theme] :is(.badge, .x-tag) { border-radius: var(--radius-badge); }
 :root[data-theme] blockquote:not(.x-quote blockquote) { border-radius: 0 var(--radius-card) var(--radius-card) 0; }

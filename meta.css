@@ -1,0 +1,114 @@
+@font-face {
+  font-family: Montserrat;
+  src: url("assets/fonts/montserrat-variable.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+.meta-only { display: none; }
+:root[data-theme="meta"] {
+  --bg: #ffffff;
+  --surface: #ffffff;
+  --surface-strong: #f1f4f7;
+  --text: #1c1e21;
+  --muted: #5d6c7b;
+  --border: #ced0d4;
+  --primary: #0064e0;
+  --primary-strong: #0457cb;
+  --secondary: #000000;
+  --accent: #a121ce;
+  --success: #24773a;
+  --warning: #805b00;
+  --danger: #ba1934;
+  --on-primary: #ffffff;
+  --ring: #1876f2;
+  --shadow: #14161a1a;
+  --primary-soft: #0091ff;
+  --fb-blue: #1876f2;
+  --meta-link: #385898;
+  --oculus-purple: #a121ce;
+  --ink-button: #000000;
+  --ink-deep: #0a1317;
+  --charcoal: #444950;
+  --slate: #4b4c4f;
+  --stone: #8595a4;
+  --hairline-soft: #dee3e9;
+  --disabled-text: #bcc0c4;
+  --brand-success: #31a24c;
+  --success-bg: #24e400;
+  --attention: #f2a918;
+  --brand-warning: #f7b928;
+  --warning-bg: #ffe200;
+  --critical: #e41e3f;
+  --critical-strong: #f0284a;
+  --profile-label: Meta / product retail;
+  --font-label: Montserrat / Optimistic fallback;
+  --font-body: Montserrat, Helvetica, Arial, sans-serif;
+  --font-heading: var(--font-body);
+  --heading-weight: 500;
+  --heading-tracking: 0em;
+  --body-leading: 1.5;
+  --label-tracking: -0.01em;
+  --label-case: none;
+  --radius-panel: 32px;
+  --radius-card: 16px;
+  --radius-control: 8px;
+  --radius-button: 100px;
+  --radius-badge: 100px;
+  --border-width: 1px;
+  --space-card: 24px;
+  --space-gap: 24px;
+  --space-control-y: 14px;
+  --space-control-x: 30px;
+  --control-height: 44px;
+  --section-space: 80px;
+  --panel-elevation: none;
+  --card-elevation: none;
+  --elevation-label: Flat / checkout-only shadow;
+  --motion-duration: 180ms;
+  --motion-easing: ease-out;
+  --hover-lift: 0px;
+  color-scheme: light;
+}
+:root[data-theme="meta"] .meta-only { display: block; }
+:root[data-theme="meta"] .x-gallery { --x-deep: #f1f4f7; --x-link: #385898; --x-focus: #1876f2; --x-glow: transparent; --x-on-primary: #ffffff; }
+:root[data-theme="meta"] :is(h1,h2,h3) { font-feature-settings: "ss01", "ss02"; color: var(--ink-deep); }
+:root[data-theme="meta"] :is(button,.x-button,.theme-option) { font-weight: 700; font-size: 14px; letter-spacing: -0.14px; }
+:root[data-theme="meta"] :is(.primary-button,.x-button-primary,.theme-option.is-active) { background: var(--ink-button); border-color: var(--ink-button); color: white; box-shadow: none; }
+:root[data-theme="meta"] :is(.primary-button,.x-button-primary):hover { background: var(--ink-button); }
+:root[data-theme="meta"] :is(.primary-button,.x-button-primary):active { background: var(--charcoal); }
+:root[data-theme="meta"] :is(.secondary-button,.ghost-button,.x-button:not(.x-button-primary):not(.meta-buy-cta)) { background: transparent; color: var(--ink-deep); border: 2px solid var(--ink-deep); padding: 12px 28px; }
+:root[data-theme="meta"] .ghost-button { border-color: #0a13171f; padding: 10px 22px; }
+:root[data-theme="meta"] :is(input:not([type="checkbox"]):not([type="radio"]),select,textarea) { background: white; color: var(--text); padding: 12px; border-color: var(--border); }
+:root[data-theme="meta"] input[type="search"] { border-radius: 100px; background: var(--surface-strong); padding: 12px 20px; }
+:root[data-theme="meta"] :is(input,select,textarea):focus-visible { outline-color: var(--fb-blue); border-color: var(--fb-blue); }
+:root[data-theme="meta"] input[aria-invalid="true"] { border: 1px solid var(--critical-strong); }
+:root[data-theme="meta"] :is(input[type="checkbox"],input[type="radio"]) { accent-color: var(--fb-blue); }
+:root[data-theme="meta"] :is(.x-feature,.x-form,.x-quote,.x-icon) { border-radius: 16px; }
+:root[data-theme="meta"] :is(.x-code,.x-terminal,table) { border-radius: 8px; }
+:root[data-theme="meta"] .x-spotlight { background: var(--ink-deep); border-radius: 32px; color: white; }
+:root[data-theme="meta"] .x-spotlight :is(h3,p) { color: white; }
+:root[data-theme="meta"] .x-spotlight .x-button { background: white; color: var(--ink-deep); border-color: white; }
+:root[data-theme="meta"] .x-intro h2 { font-size: 64px; line-height: 1.16; }
+:root[data-theme="meta"] .x-heading h3 { font-size: 36px; line-height: 1.28; }
+:root[data-theme="meta"] .x-display-sample { font-size: 28px; font-weight: 300; }
+:root[data-theme="meta"] :is(.alert-success,.badge-success) { --meta-state: var(--success); }
+:root[data-theme="meta"] :is(.alert-warning,.badge-warning) { --meta-state: var(--warning); }
+:root[data-theme="meta"] :is(.alert-danger,.badge-danger) { --meta-state: var(--danger); }
+:root[data-theme="meta"] :is(.alert-advisory,.badge-primary) { --meta-state: var(--primary); }
+:root[data-theme="meta"] :is(.alert,.badge:not(.badge-neutral)) { background: color-mix(in srgb,var(--meta-state) 10%,white); color: var(--text); border: 1px solid var(--meta-state); }
+:root[data-theme="meta"] .badge-warning { background: var(--brand-warning); color: var(--ink-deep); }
+:root[data-theme="meta"] .meta-product { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 32px; padding: 32px; border: 1px solid var(--hairline-soft); border-radius: 32px; margin-bottom: 48px; }
+.meta-product h3 { font-size: 28px; font-weight: 300; line-height: 1.21; }
+.meta-purchase { display: flex; flex-direction: column; gap: 16px; border-radius: 16px; padding: 24px; box-shadow: 0 1px 4px #14161a4d; }
+.meta-purchase > span { font-size: 14px; color: var(--muted); }
+:root[data-theme="meta"] .meta-buy-cta { background: var(--primary); color: white; border-color: var(--primary); }
+:root[data-theme="meta"] .meta-buy-cta:active { background: var(--primary-strong); }
+@media (max-width: 767px) {
+  :root[data-theme="meta"] .x-intro h2 { font-size: 36px; }
+  :root[data-theme="meta"] .meta-product { grid-template-columns: minmax(0,1fr); padding: 24px; }
+}
+@media (max-width: 479px) {
+  :root[data-theme="meta"] .x-intro h2 { font-size: 24px; }
+  :root[data-theme="meta"] .meta-purchase { padding: 16px; }
+}

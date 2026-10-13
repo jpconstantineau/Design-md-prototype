@@ -4,7 +4,8 @@ const source = fs.readFileSync('index.html', 'utf8');
 const pages = [
   { theme: 'composio-light', name: 'Composio Light', accent: '#0007cd' },
   { theme: 'composio-dark', name: 'Composio Dark', accent: '#0007cd' },
-  { theme: 'sentry', name: 'Sentry', accent: '#1f1633' }
+  { theme: 'sentry', name: 'Sentry', accent: '#1f1633' },
+  { theme: 'meta', name: 'Meta', accent: '#0064e0' }
 ];
 for (const { theme, name, accent } of pages) {
   const html = source

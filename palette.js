@@ -14,7 +14,9 @@ function renderPalette() {
       ['--brand-glow', 'Composio spotlight'], ['--brand-cyan', 'Reference illustration cyan'],
       ['--brand-violet', 'Reference illustration violet'], ['--brand-lime', 'Sentry headline / divider'],
       ['--brand-pink', 'Sentry pink'], ['--brand-violet-link', 'Reference violet link'],
-      ['--brand-violet-deep', 'Sentry select / spotlight'], ['--brand-violet-mid', 'Sentry border violet']
+      ['--brand-violet-deep', 'Sentry select / spotlight'], ['--brand-violet-mid', 'Sentry border violet'],
+      ['--primary-soft', 'Meta information blue'], ['--fb-blue', 'Meta form selection'],
+      ['--meta-link', 'Meta link blue'], ['--oculus-purple', 'Meta VR accent'], ['--ink-button', 'Meta marketing action']
     ]],
     ['States & interaction', [
       ['--success', 'Success'], ['--warning', 'Warning'], ['--danger', 'Danger'],
@@ -22,7 +24,12 @@ function renderPalette() {
       ['--ring', 'Focus / ring'], ['--shadow', 'Shadow color'],
       ['--field-bg', 'Sentry input fill'], ['--field-ink', 'Sentry input text'],
       ['--field-border', 'Sentry input border'], ['--field-placeholder', 'Sentry placeholder'],
-      ['--pressed-ink', 'Sentry pressed label'], ['--ghost-fill', 'Sentry ghost action']
+      ['--pressed-ink', 'Sentry pressed label'], ['--ghost-fill', 'Sentry ghost action'],
+      ['--brand-success', 'Meta reference success'], ['--success-bg', 'Meta reference success fill'],
+      ['--attention', 'Meta attention'], ['--brand-warning', 'Meta promotional yellow'],
+      ['--warning-bg', 'Meta reference warning fill'], ['--critical', 'Meta critical'], ['--critical-strong', 'Meta error border'],
+      ['--ink-deep', 'Meta deep ink'], ['--charcoal', 'Meta pressed action'], ['--slate', 'Meta supporting ink'],
+      ['--stone', 'Meta de-emphasized ink'], ['--hairline-soft', 'Meta card border'], ['--disabled-text', 'Meta disabled reference']
     ]],
     ['Gallery-specific colors', [
       ['--x-deep', 'Code / recessed surface'], ['--x-link', 'Gallery links'],
