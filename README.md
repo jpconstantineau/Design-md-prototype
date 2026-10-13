@@ -58,8 +58,8 @@ uses explicit 640/768/1024px boundaries shown in the gallery's table.
 node build-pages.cjs
 ```
 
-This regenerates the two standalone Composio HTML pages with their default theme and title.
-They share `styles.css`, `gallery.css`, `theme-styles.css`, `script.js`, and `gallery.js`
+This regenerates the standalone Composio and Sentry HTML pages with their default theme and title.
+They share `styles.css`, `gallery.css`, `theme-styles.css`, `sentry.css`, `script.js`, and `gallery.js`
 and need no server build.
 
 ## Full styling profiles
@@ -75,6 +75,7 @@ variants share their family's shape, typography, and density to keep mode change
 | Ocean | 8 / 6 / 4px | Sans headings, mono labels | 20px padding, offset shadows |
 | HMI (all four) | 4 / 4 / 2px | Segoe UI, tabular numbers | 16px padding, 2px outlines, flat surfaces |
 | Composio Light / Dark | 16 / 12 / 8px | System sans, medium headings, mono code | 24px padding, layered surfaces |
+| Sentry | 18 / 12 / 8px | Rubik, uppercase actions, Monaco-style code | 32px padding, flat violet surfaces |
 
 `theme-styles.css` owns the shared tokens and component rules. Customize `--font-body`,
 `--font-heading`, `--heading-weight`, `--body-leading`, `--radius-*`, `--space-*`,
@@ -82,10 +83,39 @@ variants share their family's shape, typography, and density to keep mode change
 to change a profile without editing individual components. Existing color palettes remain
 unchanged. Font families use local fallbacks and require no download.
 
-All controls keep a minimum 44px height. Reduced-motion preferences disable transitions
+Buttons and text fields keep a minimum 44px height. Reduced-motion preferences disable transitions
 and hover movement; HMI profiles use no motion by default. Alarm shapes retain their
 semantic meaning. The labeled radius and spacing rulers intentionally remain fixed reference
 samples, while actual component radii and spacing follow the selected profile.
+
+## Sentry style
+
+[Sentry](sentry.html) is the eleventh selectable theme. It adapts the detailed
+[Sentry design guide](https://getdesign.md/sentry/design-md) and its
+[source analysis](https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/sentry/DESIGN.md),
+which describe a midnight-violet and lime visual language despite the catalog's brief
+pink-purple dashboard description. This is an independent inspired analysis, not an
+official Sentry specification.
+
+The implementation includes Rubik typography, 18px panels, 12px cards, 8px uppercase
+buttons, 6px inputs, 4px tags, generous padding, flat dark surfaces, light text fields,
+violet selects, blue focus outlines with inset field shadows, and inverted pressed buttons.
+Lime appears in the display highlight and footer squiggle, not on actions or body text.
+Original SVG decoration supplies a restrained starfield and footer divider. Proprietary
+display lettering and mascots are not reproduced.
+
+Rubik is bundled locally as a variable font in `assets/fonts/rubik-variable.ttf`, with
+its SIL Open Font License in `assets/fonts/Rubik-OFL.txt`, from the
+[Google Fonts Rubik distribution](https://github.com/google/fonts/tree/main/ofl/rubik).
+No font request to a third party is needed. Code uses Monaco/Menlo/Consolas fallbacks.
+The legacy palettes continue using their existing font stacks.
+
+Adaptations for this playground: semantic cards use labeled violet/pink tints; action
+borders remain visible against dark panels; the content cap is 1152px, while the shared
+640/768/1024px gallery breakpoints remain consistent for comparison. Code stays at 16px
+and scrolls within its container when necessary. Motion timing is a local choice, since
+the guide specifies pressed states rather than hover timing. Styles live in `sentry.css`
+and are isolated from the other ten themes.
 
 ## HMI themes
 

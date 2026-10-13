@@ -32,6 +32,9 @@ const themeMap = {
   },
   'composio-dark': {
     label: 'Composio Dark', accent: '#0007cd'
+  },
+  sentry: {
+    label: 'Sentry', accent: '#1f1633'
   }
 };
 
