@@ -58,7 +58,16 @@ function applyTheme(themeName) {
   if (themeMeta) {
     themeMeta.setAttribute('content', chosenTheme.accent);
   }
+  updateStyleReadout();
 }
+
+function updateStyleReadout() {
+  const tokens = getComputedStyle(root);
+  document.querySelectorAll('[data-style-token]').forEach((element) => {
+    element.textContent = tokens.getPropertyValue(element.dataset.styleToken).trim();
+  });
+}
+window.matchMedia('(prefers-reduced-motion: reduce)').addEventListener('change', updateStyleReadout);
 
 const preferredTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
 const queryTheme = new URLSearchParams(window.location.search).get('theme');

@@ -11,6 +11,7 @@
     <title>CSS Color Scheme Playground</title>
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="gallery.css" />
+    <link rel="stylesheet" href="theme-styles.css" />
   </head>
   <body>
     <div class="app-shell">
@@ -37,6 +38,24 @@
       </header>
 
       <main class="page-grid">
+        <section class="panel style-profile" aria-labelledby="style-profile-title">
+          <p class="section-kicker">Active theme styling</p>
+          <h2 id="style-profile-title" data-style-token="--profile-label">Theme profile</h2>
+          <p>Compare corners, type, density, depth, and motion as you switch themes.
+            Light, dark, and color-blind variants within a family share the same styling.</p>
+          <dl>
+            <div><dt>Typography</dt><dd data-style-token="--font-label"></dd></div>
+            <div><dt>Panel radius</dt><dd data-style-token="--radius-panel"></dd></div>
+            <div><dt>Card radius</dt><dd data-style-token="--radius-card"></dd></div>
+            <div><dt>Button radius</dt><dd data-style-token="--radius-button"></dd></div>
+            <div><dt>Input radius</dt><dd data-style-token="--radius-control"></dd></div>
+            <div><dt>Card padding</dt><dd data-style-token="--space-card"></dd></div>
+            <div><dt>Grid gap</dt><dd data-style-token="--space-gap"></dd></div>
+            <div><dt>Border width</dt><dd data-style-token="--border-width"></dd></div>
+            <div><dt>Depth</dt><dd data-style-token="--elevation-label"></dd></div>
+            <div><dt>Color / hover transition</dt><dd data-style-token="--motion-duration"></dd></div>
+          </dl>
+        </section>
         <section class="panel hmi-demo" aria-labelledby="hmi-title">
           <p class="section-kicker">Operator display / sample states</p>
           <h2 id="hmi-title">Quiet during normal operation. Clear when attention is needed.</h2>
@@ -370,7 +389,7 @@ renderComponents(preview);</code></pre><p id="copy-status" class="x-caption" rol
           </section>
 
           <section id="gallery-tokens" class="x-section" aria-labelledby="tokens-title">
-            <div class="x-heading"><p class="x-eyebrow">04 / Foundations</p><h3 id="tokens-title">Geometry, rhythm, and depth</h3><p>These added samples explore the reference scale without changing the original components above.</p></div>
+            <div class="x-heading"><p class="x-eyebrow">04 / Foundations</p><h3 id="tokens-title">Geometry, rhythm, and depth</h3><p>The radius and spacing rulers show fixed reference values. Actual component styling follows the active theme profile shown at the top of the page.</p></div>
             <h4>Corner radius</h4><div class="x-radius-row">
               <div style="--sample-radius:0px">0px</div><div style="--sample-radius:4px">4px</div><div style="--sample-radius:6px">6px</div><div style="--sample-radius:8px">8px</div><div style="--sample-radius:12px">12px</div><div style="--sample-radius:16px">16px</div><div style="--sample-radius:9999px">Pill</div>
             </div>

@@ -1,0 +1,206 @@
+/* Full theme profiles. Color tokens remain in styles.css and gallery.css.
+   Light/dark and color-vision variants share their family's geometry. */
+:root {
+  --profile-label: Soft interface;
+  --font-label: System sans;
+  --font-body: Inter, "Segoe UI", sans-serif;
+  --font-heading: var(--font-body);
+  --font-code: Consolas, monospace;
+  --heading-weight: 700;
+  --heading-tracking: -0.015em;
+  --body-leading: 1.6;
+  --label-tracking: 0.12em;
+  --label-case: uppercase;
+  --radius-panel: 20px;
+  --radius-card: 14px;
+  --radius-control: 12px;
+  --radius-button: 12px;
+  --radius-badge: 999px;
+  --border-width: 1px;
+  --space-card: 20px;
+  --space-gap: 24px;
+  --space-control-y: 12px;
+  --space-control-x: 16px;
+  --control-height: 44px;
+  --section-space: 72px;
+  --panel-elevation: 0 14px 32px var(--shadow);
+  --card-elevation: 0 4px 12px var(--shadow);
+  --elevation-label: Soft shadows;
+  --focus-width: 3px;
+  --focus-offset: 3px;
+  --motion-duration: 180ms;
+  --motion-easing: ease;
+  --hover-lift: -1px;
+}
+:root[data-theme="sunset"] {
+  --profile-label: Warm editorial;
+  --font-label: Georgia headings / system body;
+  --font-heading: Georgia, "Times New Roman", serif;
+  --heading-weight: 500;
+  --heading-tracking: -0.025em;
+  --body-leading: 1.75;
+  --label-tracking: 0.04em;
+  --label-case: none;
+  --radius-panel: 28px;
+  --radius-card: 20px;
+  --radius-control: 16px;
+  --radius-button: 999px;
+  --space-card: 28px;
+  --space-gap: 28px;
+  --space-control-y: 14px;
+  --space-control-x: 20px;
+  --control-height: 48px;
+  --section-space: 88px;
+  --panel-elevation: 0 16px 40px var(--shadow);
+  --card-elevation: 0 8px 20px var(--shadow);
+  --elevation-label: Deep soft shadows;
+  --motion-duration: 240ms;
+  --motion-easing: ease-out;
+  --hover-lift: -2px;
+}
+:root[data-theme="ocean"] {
+  --profile-label: Structured technical;
+  --font-label: Segoe UI / monospace labels;
+  --font-body: "Segoe UI", Arial, sans-serif;
+  --font-code: "Cascadia Code", Consolas, monospace;
+  --heading-weight: 600;
+  --heading-tracking: 0.015em;
+  --body-leading: 1.55;
+  --label-tracking: 0.08em;
+  --radius-panel: 8px;
+  --radius-card: 6px;
+  --radius-control: 4px;
+  --radius-button: 4px;
+  --radius-badge: 4px;
+  --space-card: 20px;
+  --space-gap: 20px;
+  --section-space: 64px;
+  --panel-elevation: 0 6px 0 var(--shadow);
+  --card-elevation: 0 3px 0 var(--shadow);
+  --elevation-label: Offset shadows;
+  --motion-duration: 120ms;
+  --hover-lift: 0px;
+}
+:root[data-theme^="hmi-"] {
+  --profile-label: Compact operator interface;
+  --border-width: 2px;
+  --font-label: Segoe UI / tabular numbers;
+  --font-body: "Segoe UI", Arial, sans-serif;
+  --heading-weight: 600;
+  --heading-tracking: 0em;
+  --body-leading: 1.5;
+  --label-tracking: 0.04em;
+  --radius-panel: 4px;
+  --radius-card: 4px;
+  --radius-control: 2px;
+  --radius-button: 2px;
+  --radius-badge: 2px;
+  --space-card: 16px;
+  --space-gap: 16px;
+  --space-control-y: 8px;
+  --space-control-x: 12px;
+  --control-height: 44px;
+  --section-space: 48px;
+  --panel-elevation: none;
+  --card-elevation: none;
+  --elevation-label: Flat / outlined;
+  --focus-width: 3px;
+  --focus-offset: 2px;
+  --motion-duration: 0ms;
+  --hover-lift: 0px;
+}
+:root[data-theme^="composio-"] {
+  --profile-label: Developer workspace;
+  --font-label: System sans / mono code;
+  --font-body: Inter, ui-sans-serif, system-ui, sans-serif;
+  --font-code: "JetBrains Mono", Consolas, monospace;
+  --heading-weight: 500;
+  --heading-tracking: -0.03em;
+  --body-leading: 1.5;
+  --label-tracking: 0.08em;
+  --radius-panel: 16px;
+  --radius-card: 12px;
+  --radius-control: 8px;
+  --radius-button: 8px;
+  --radius-badge: 999px;
+  --space-card: 24px;
+  --space-gap: 24px;
+  --space-control-y: 10px;
+  --space-control-x: 18px;
+  --control-height: 44px;
+  --section-space: 96px;
+  --panel-elevation: none;
+  --card-elevation: none;
+  --elevation-label: Surface layers;
+  --motion-duration: 150ms;
+  --hover-lift: 0px;
+}
+
+/* One consumption layer for both the original examples and extended gallery. */
+:root[data-theme] body { font-family: var(--font-body); line-height: var(--body-leading); }
+:root[data-theme] :is(h1, h2, h3, .x-display-sample) {
+  font-family: var(--font-heading);
+  font-weight: var(--heading-weight);
+  letter-spacing: var(--heading-tracking);
+}
+:root[data-theme] :is(.x-gallery, .x-gallery p) { line-height: var(--body-leading); }
+:root[data-theme] :is(pre, code, .x-gallery pre, .x-gallery code) { font-family: var(--font-code); }
+:root[data-theme] :is(.eyebrow, .section-kicker, .metric-label, .x-eyebrow, .x-tag) {
+  letter-spacing: var(--label-tracking);
+  text-transform: var(--label-case);
+}
+:root[data-theme="ocean"] :is(.eyebrow, .section-kicker, .metric-label, .x-eyebrow) { font-family: var(--font-code); }
+:root[data-theme^="hmi-"] body { font-variant-numeric: tabular-nums; }
+:root[data-theme] :is(.panel, .theme-picker, .x-feature, .x-form, .x-terminal-grid, .x-spotlight) { border-radius: var(--radius-panel); }
+:root[data-theme] :is(.metric-card, .swatch, .alert, .x-toolkit, .x-quote, .x-terminal, .x-code, .x-elevation-grid > div, table, .alarm-sample) { border-radius: var(--radius-card); }
+:root[data-theme] :is(.swatch-color, .x-icon) { border-radius: var(--radius-control); }
+:root[data-theme] :is(input:not([type="checkbox"]):not([type="radio"]), select, textarea) { border-radius: var(--radius-control); }
+:root[data-theme] :is(button, .theme-option, .x-button) { border-radius: var(--radius-button); }
+:root[data-theme] :is(.badge, .x-tag) { border-radius: var(--radius-badge); }
+:root[data-theme] blockquote:not(.x-quote blockquote) { border-radius: 0 var(--radius-card) var(--radius-card) 0; }
+:root[data-theme] :is(.panel, .theme-picker, .metric-card, .swatch, .alert, .x-feature, .x-toolkit, .x-form, .x-terminal-grid, .x-quote, .x-code, .x-spotlight, .x-button) { border-width: var(--border-width); }
+:root[data-theme] :is(.panel, .x-feature, .x-toolkit, .x-form, .x-terminal, .x-code, .x-quote) { padding: var(--space-card); }
+:root[data-theme] :is(.page-grid, .x-feature-grid, .x-toolkit-grid, .x-form, .x-elevation-grid, .x-type-grid) { gap: var(--space-gap); }
+:root[data-theme] :is(.primary-button, .secondary-button, .ghost-button, .x-button, .theme-option) {
+  min-height: var(--control-height);
+  padding: var(--space-control-y) var(--space-control-x);
+}
+:root[data-theme] :is(input:not([type="checkbox"]):not([type="radio"]), select, textarea) {
+  min-height: var(--control-height);
+  padding: var(--space-control-y) var(--space-control-x);
+}
+:root[data-theme] :is(.panel, .theme-picker) { box-shadow: var(--panel-elevation); }
+:root[data-theme] :is(.x-feature, .x-toolkit, .metric-card) { box-shadow: var(--card-elevation); }
+:root[data-theme] :is(.x-intro, .x-section) { padding-block: clamp(32px, 6vw, var(--section-space)); }
+:root[data-theme] :is(button, a, input, select, textarea, summary, [tabindex]):focus-visible {
+  outline: var(--focus-width) solid var(--text);
+  outline-offset: var(--focus-offset);
+  box-shadow: none;
+}
+:root[data-theme] :is(body, button, a, input, select, textarea, .panel, .metric-card, .alert, .badge, .x-feature, .x-toolkit) {
+  transition-duration: var(--motion-duration);
+  transition-timing-function: var(--motion-easing);
+}
+:root[data-theme] :is(.primary-button, .secondary-button, .ghost-button, .x-button, .theme-option) {
+  transition-property: background-color, color, border-color, box-shadow, transform;
+}
+@media (hover: hover) {
+  :root[data-theme] :is(.primary-button, .secondary-button, .ghost-button, .x-button, .theme-option):hover:not(:disabled) { transform: translateY(var(--hover-lift)); }
+}
+@media (prefers-reduced-motion: reduce) {
+  :root { --motion-duration: 0ms !important; --hover-lift: 0px !important; }
+}
+
+/* Live profile readout; fixed radius/spacing rulers remain literal samples. */
+.style-profile { grid-column: 1 / -1; }
+.style-profile h2 { margin-bottom: 8px; }
+.style-profile > p { color: var(--muted); }
+.style-profile dl { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 180px), 1fr)); gap: 16px; margin: 0; }
+.style-profile dl > div { border-top: 1px solid var(--border); padding-top: 12px; }
+.style-profile dt { color: var(--muted); font-size: 13px; }
+.style-profile dd { margin: 4px 0 0; font-weight: 600; overflow-wrap: anywhere; }
+/* Larger profile padding must never force the existing examples off screen. */
+.panel { min-width: 0; }
+.panel table { table-layout: fixed; }
+.panel :is(th, td) { overflow-wrap: anywhere; padding-inline: clamp(6px, 1vw, 14px); }
+.swatch div { min-width: 0; overflow-wrap: anywhere; }

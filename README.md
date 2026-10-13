@@ -1,6 +1,7 @@
 # Design-md-prototype
 
-This repository contains a small static HTML/CSS/JavaScript site that showcases CSS color tokens and supports both light and dark themes for quick design testing.
+This static HTML/CSS/JavaScript playground compares complete design themes: color,
+typography, shape, spacing, depth, and interaction styling.
 
 ## Local preview
 
@@ -35,17 +36,17 @@ disabled fields, a notification switch, reset/save feedback, disclosure panels, 
 spacing/radius/elevation samples, and a live viewport indicator. All data is illustrative;
 the form sends nothing and its values are not persisted beyond the page session.
 
-`gallery.css` scopes the additions to `x-` classes. Existing components retain their styling
-in the original themes. Composio overrides are scoped to those two themes only. Gallery
+`gallery.css` scopes the additions to `x-` classes. `theme-styles.css` applies each theme's
+styling profile to both the original components and the extended gallery. Gallery
 toolkit columns change from one to two at 640px, then four at 1024px. Terminal panes use
 two columns from 640px, and the gallery menu switches to inline links at 768px. Existing
-layout breakpoints remain unchanged, including a pre-existing narrow-width table overflow.
+layout breakpoints remain unchanged; table cells now wrap to prevent narrow-width overflow.
 
 The implementation references the independent
 [Composio design analysis](https://getdesign.md/composio/design-md) and its
 [DESIGN.md source](https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/composio/DESIGN.md).
 The dark theme follows its blue CTA and neutral surface palette; the light theme is our
-adaptation. Links and focus outlines use a brighter blue in dark mode for legibility.
+adaptation. Links use a brighter blue in dark mode for legibility; focus outlines use the text color.
 Muted and error colors are adjusted for readable examples. Font stacks use Inter/system
 sans and JetBrains Mono/Consolas/monospace fallbacks; no licensed font files are bundled.
 The guide's prose and preview disagree on some mobile boundaries; this implementation
@@ -58,7 +59,34 @@ node build-pages.cjs
 ```
 
 This regenerates the two standalone Composio HTML pages with their default theme and title.
-They share `styles.css`, `gallery.css`, `script.js`, and `gallery.js` and need no server build.
+They share `styles.css`, `gallery.css`, `theme-styles.css`, `script.js`, and `gallery.js`
+and need no server build.
+
+## Full styling profiles
+
+The style readout at the top of each page reports the active CSS tokens. Switching themes
+updates existing examples as well as the extended gallery. Light/dark and color-vision
+variants share their family's shape, typography, and density to keep mode changes consistent.
+
+| Family | Panel / card / button radius | Typography | Density and depth |
+| --- | --- | --- | --- |
+| Light / Dark | 20 / 14 / 12px | System sans, bold headings | 20px card padding, soft shadows |
+| Sunset | 28 / 20 / pill | Georgia headings, sans body | 28px padding, generous spacing, deep shadows |
+| Ocean | 8 / 6 / 4px | Sans headings, mono labels | 20px padding, offset shadows |
+| HMI (all four) | 4 / 4 / 2px | Segoe UI, tabular numbers | 16px padding, 2px outlines, flat surfaces |
+| Composio Light / Dark | 16 / 12 / 8px | System sans, medium headings, mono code | 24px padding, layered surfaces |
+
+`theme-styles.css` owns the shared tokens and component rules. Customize `--font-body`,
+`--font-heading`, `--heading-weight`, `--body-leading`, `--radius-*`, `--space-*`,
+`--border-width`, `--panel-elevation`, `--card-elevation`, `--focus-*`, and `--motion-*`
+to change a profile without editing individual components. Existing color palettes remain
+unchanged. Font families use local fallbacks and require no download.
+
+All controls keep a minimum 44px height. Reduced-motion preferences disable transitions
+and hover movement; HMI profiles use no motion by default. Alarm shapes retain their
+semantic meaning. The labeled radius and spacing rulers intentionally remain fixed reference
+samples, while actual component radii and spacing follow the selected profile.
+
 ## HMI themes
 
 Four additional options retain the original four presets: **HMI Light**, **HMI Dark**,
