@@ -14,6 +14,18 @@ const themeMap = {
   ocean: {
     label: 'Ocean',
     accent: '#38bdf8'
+  },
+  'hmi-light': {
+    label: 'HMI Light', accent: '#d4d6d8'
+  },
+  'hmi-dark': {
+    label: 'HMI Dark', accent: '#202428'
+  },
+  'hmi-light-cvd': {
+    label: 'HMI Light (color-blind)', accent: '#d4d6d8'
+  },
+  'hmi-dark-cvd': {
+    label: 'HMI Dark (color-blind)', accent: '#202428'
   }
 };
 
@@ -21,7 +33,8 @@ const root = document.documentElement;
 const buttons = [...document.querySelectorAll('[data-theme-option]')];
 
 function applyTheme(themeName) {
-  const chosenTheme = themeMap[themeName] || themeMap.light;
+  if (!Object.hasOwn(themeMap, themeName)) themeName = 'light';
+  const chosenTheme = themeMap[themeName];
   root.setAttribute('data-theme', themeName);
 
   buttons.forEach((button) => {

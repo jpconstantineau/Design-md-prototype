@@ -534,3 +534,107 @@ tbody tr:last-child td {
     width: 100%;
   }
 }
+
+/* HMI palettes: project adaptations; see README for rationale and sources. */
+:root[data-theme^="hmi-"] {
+  --bg: #d4d6d8;
+  --surface: #eceeef;
+  --surface-strong: #dfe2e4;
+  --text: #202428;
+  --muted: #50565c;
+  --border: #777e85;
+  --primary: #41484f;
+  --primary-strong: #30363c;
+  --secondary: #50565c;
+  --accent: #50565c;
+  --success: #50565c;
+  --warning: #775600;
+  --danger: #b22222;
+  --alarm-low: #75409a;
+  --on-primary: #ffffff;
+  --on-alarm: #ffffff;
+  --shadow: transparent;
+  --ring: #41484f;
+  color-scheme: light;
+}
+
+:root[data-theme="hmi-dark"],
+:root[data-theme="hmi-dark-cvd"] {
+  --bg: #202428;
+  --surface: #2b3035;
+  --surface-strong: #363c42;
+  --text: #edf0f2;
+  --muted: #bcc2c8;
+  --border: #858e97;
+  --primary: #c4cbd2;
+  --primary-strong: #e0e5e9;
+  --secondary: #bcc2c8;
+  --accent: #bcc2c8;
+  --success: #bcc2c8;
+  --warning: #f0ca62;
+  --danger: #ff9696;
+  --alarm-low: #d6aff5;
+  --on-primary: #202428;
+  --on-alarm: #202428;
+  --ring: #c4cbd2;
+  color-scheme: dark;
+}
+
+:root[data-theme="hmi-light-cvd"] {
+  --danger: #9b4300;
+  --warning: #00679a;
+  --alarm-low: #75409a;
+}
+
+:root[data-theme="hmi-dark-cvd"] {
+  --danger: #ffba75;
+  --warning: #78caff;
+  --alarm-low: #d6aff5;
+}
+
+/* Let eight options wrap without distorting the original pill container. */
+.topbar { flex-wrap: wrap; }
+.theme-picker { border-radius: 20px; }
+.hmi-demo { display: none; grid-column: 1 / -1; }
+:root[data-theme^="hmi-"] .hmi-demo { display: block; }
+:root[data-theme^="hmi-"] .theme-option.is-active,
+:root[data-theme^="hmi-"] .primary-button,
+:root[data-theme^="hmi-"] .secondary-button { color: var(--on-primary); }
+:root[data-theme^="hmi-"] .status-dot { box-shadow: none; }
+:root[data-theme^="hmi-"] .badge-primary { background: var(--surface-strong); }
+:root[data-theme^="hmi-"] .alert,
+:root[data-theme^="hmi-"] .badge-success,
+:root[data-theme^="hmi-"] .badge-warning,
+:root[data-theme^="hmi-"] .badge-danger {
+  background: var(--surface-strong);
+}
+/* Generic component examples stay neutral; priority hues belong to alarms. */
+:root[data-theme^="hmi-"] .alert,
+:root[data-theme^="hmi-"] .badge { color: var(--text); border: 1px solid var(--border); }
+:root[data-theme^="hmi-"] :is(button, a, input, select, textarea):focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 3px;
+  box-shadow: none;
+}
+:root[data-theme^="hmi-"] input { accent-color: var(--primary); }
+.alarm-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr)); gap: 1rem; }
+.alarm-sample { --state-color: var(--success); display: flex; align-items: center; gap: 0.8rem; padding: 1rem; border: 2px solid var(--state-color); border-radius: 8px; }
+.alarm-sample p { margin: 0.25rem 0 0; color: var(--muted); font-size: 0.85rem; }
+.priority-1 { --state-color: var(--danger); }
+.priority-2 { --state-color: var(--warning); }
+.priority-3 { --state-color: var(--alarm-low); }
+.alarm-symbol { display: grid; place-items: center; flex: 0 0 2rem; height: 2rem; background: var(--state-color); color: var(--on-alarm); font-weight: 800; }
+.normal-symbol { border-radius: 50%; }
+.octagon { clip-path: polygon(30% 0, 70% 0, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0 70%, 0 30%); }
+.triangle { clip-path: polygon(50% 0, 100% 100%, 0 100%); padding-top: 0.45rem; }
+.square { border-radius: 0; }
+.hmi-note { margin: 1.25rem 0 0; color: var(--muted); font-size: 0.85rem; }
+@media (max-width: 400px) {
+  .app-shell { padding-inline: 0.75rem; }
+  .page-grid { grid-template-columns: minmax(0, 1fr); }
+  th, td { padding: 0.5rem; overflow-wrap: anywhere; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; }
+}
+:root[data-theme^="hmi-"] .theme-option.is-active { box-shadow: none; }

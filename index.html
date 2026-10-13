@@ -19,17 +19,37 @@
           <h1>CSS Color Scheme Test Page</h1>
         </div>
 
-        <div class="theme-picker" aria-label="Theme selector">
+        <div class="theme-picker" role="group" aria-label="Theme selector">
           <button class="theme-option is-active" data-theme-option="light" type="button">
             Light
           </button>
           <button class="theme-option" data-theme-option="dark" type="button">Dark</button>
           <button class="theme-option" data-theme-option="sunset" type="button">Sunset</button>
           <button class="theme-option" data-theme-option="ocean" type="button">Ocean</button>
+          <button class="theme-option" data-theme-option="hmi-light" type="button">HMI Light</button>
+          <button class="theme-option" data-theme-option="hmi-dark" type="button">HMI Dark</button>
+          <button class="theme-option" data-theme-option="hmi-light-cvd" type="button">HMI Light (color-blind)</button>
+          <button class="theme-option" data-theme-option="hmi-dark-cvd" type="button">HMI Dark (color-blind)</button>
         </div>
       </header>
 
       <main class="page-grid">
+        <section class="panel hmi-demo" aria-labelledby="hmi-title">
+          <p class="section-kicker">Operator display / sample states</p>
+          <h2 id="hmi-title">Quiet during normal operation. Clear when attention is needed.</h2>
+          <p class="lead">Neutral surfaces keep the process readable. Alarm priorities use color,
+            shape, and text together. Color-blind variants use orange, blue, and purple instead
+            of red-based priority coding; labels remain the same in every HMI theme.</p>
+          <div class="alarm-grid">
+            <div class="alarm-sample normal-state"><span class="alarm-symbol normal-symbol" aria-hidden="true">&#10003;</span><div><strong>Normal / running</strong><p>P-101 pump · No active alarm</p></div></div>
+            <div class="alarm-sample priority-1"><span class="alarm-symbol octagon" aria-hidden="true">!</span><div><strong>P1 · High priority</strong><p>PT-101 · Pressure high-high</p></div></div>
+            <div class="alarm-sample priority-2"><span class="alarm-symbol triangle" aria-hidden="true">!</span><div><strong>P2 · Medium priority</strong><p>LT-202 · Level high</p></div></div>
+            <div class="alarm-sample priority-3"><span class="alarm-symbol square" aria-hidden="true">!</span><div><strong>P3 · Low priority</strong><p>FT-303 · Flow low</p></div></div>
+          </div>
+          <p class="hmi-note">Design study informed by ISA-101, EEMUA 201, and IEC 62682.
+            These are adapted palettes, not a certified HMI or a standard-mandated color scheme.
+            Priority assignments are illustrative.</p>
+        </section>
         <section class="panel hero-panel">
           <div class="panel-header">
             <span class="status-dot"></span>
