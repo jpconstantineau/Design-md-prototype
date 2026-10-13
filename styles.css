@@ -442,6 +442,13 @@ textarea:focus {
   gap: 0.3rem;
 }
 
+.alert-advisory {
+  --semantic: var(--primary);
+  background: color-mix(in srgb, var(--primary) 14%, var(--surface));
+  border-color: var(--primary);
+  color: var(--text);
+}
+
 .alert-success {
   background: rgba(22, 163, 74, 0.12);
   border-color: rgba(22, 163, 74, 0.35);
