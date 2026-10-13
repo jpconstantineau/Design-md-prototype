@@ -26,6 +26,12 @@ const themeMap = {
   },
   'hmi-dark-cvd': {
     label: 'HMI Dark (color-blind)', accent: '#202428'
+  },
+  'composio-light': {
+    label: 'Composio Light', accent: '#0007cd'
+  },
+  'composio-dark': {
+    label: 'Composio Dark', accent: '#0007cd'
   }
 };
 
@@ -40,7 +46,12 @@ function applyTheme(themeName) {
   buttons.forEach((button) => {
     const isActive = button.dataset.themeOption === themeName;
     button.classList.toggle('is-active', isActive);
-    button.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+    if (button.tagName === 'A') {
+      if (isActive) button.setAttribute('aria-current', 'page');
+      else button.removeAttribute('aria-current');
+    } else {
+      button.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+    }
   });
 
   const themeMeta = document.querySelector('meta[name="theme-color"]');
@@ -50,10 +61,19 @@ function applyTheme(themeName) {
 }
 
 const preferredTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-applyTheme(preferredTheme);
+const queryTheme = new URLSearchParams(window.location.search).get('theme');
+applyTheme(queryTheme || root.dataset.defaultTheme || preferredTheme);
 
 buttons.forEach((button) => {
   button.addEventListener('click', () => {
+    if (button.tagName === 'A') return;
+    if (root.dataset.defaultTheme) {
+      window.location.href = `index.html?theme=${button.dataset.themeOption}`;
+      return;
+    }
     applyTheme(button.dataset.themeOption);
+    const url = new URL(window.location.href);
+    url.searchParams.set('theme', button.dataset.themeOption);
+    window.history.replaceState(null, '', url);
   });
 });

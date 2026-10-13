@@ -10,6 +10,7 @@
     <meta name="theme-color" content="#3b82f6" />
     <title>CSS Color Scheme Playground</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="gallery.css" />
   </head>
   <body>
     <div class="app-shell">
@@ -30,6 +31,8 @@
           <button class="theme-option" data-theme-option="hmi-dark" type="button">HMI Dark</button>
           <button class="theme-option" data-theme-option="hmi-light-cvd" type="button">HMI Light (color-blind)</button>
           <button class="theme-option" data-theme-option="hmi-dark-cvd" type="button">HMI Dark (color-blind)</button>
+          <a class="theme-option" data-theme-option="composio-light" href="composio-light.html">Composio Light</a>
+          <a class="theme-option" data-theme-option="composio-dark" href="composio-dark.html">Composio Dark</a>
         </div>
       </header>
 
@@ -292,9 +295,104 @@
             </tbody>
           </table>
         </section>
+        <!-- Shared additive gallery: original examples above retain their styles. -->
+        <section class="x-gallery" aria-labelledby="extended-title">
+          <header class="x-intro">
+            <p class="x-eyebrow">Extended component library</p>
+            <h2 id="extended-title">One collection.<br />Every theme.</h2>
+            <p>Explore richer layouts, interaction states, and design tokens in the current palette.</p>
+            <p class="x-caption">Inspired by the <a href="https://getdesign.md/composio/design-md">Composio design analysis</a>.
+              The light palette is a local adaptation of the dark reference.</p>
+          </header>
+
+          <nav class="x-nav" aria-label="Component gallery">
+            <strong>Component explorer</strong>
+            <button class="x-button x-menu" aria-expanded="false" aria-controls="gallery-links" type="button">Menu</button>
+            <div id="gallery-links" class="x-nav-links">
+              <a href="#gallery-cards">Cards</a><a href="#gallery-forms">Forms</a>
+              <a href="#gallery-tokens">Tokens</a><a href="#gallery-responsive">Responsive</a>
+            </div>
+          </nav>
+
+          <section class="x-section" aria-labelledby="terminal-title">
+            <div class="x-heading"><p class="x-eyebrow">01 / Code &amp; activity</p><h3 id="terminal-title">A workspace in four panes</h3><p>Illustrative content. No external services are connected.</p></div>
+            <div class="x-terminal-grid">
+              <article class="x-terminal"><h4>Configuration</h4><pre><code>{
+  "workspace": "design-lab",
+  "environment": "preview",
+  "tools": ["calendar", "files"]
+}</code></pre></article>
+              <article class="x-terminal"><h4>Activity</h4><pre><code>09:41  Preview opened
+09:42  Palette selected
+09:43  Components rendered
+09:44  Ready for review</code></pre></article>
+              <article class="x-terminal"><h4>Available tools</h4><pre><code>calendar   / 12 operations
+files      /  8 operations
+messages   / 16 operations
+tasks      /  6 operations</code></pre></article>
+              <article class="x-terminal"><h4>Environment</h4><pre><code>mode       local preview
+network    disconnected
+status     ready
+changes    unsaved sample</code></pre></article>
+            </div>
+            <div class="x-code"><div class="x-code-bar"><span>Example configuration</span><button class="x-button" id="copy-example" type="button">Copy</button></div><pre><code id="example-code">const preview = { theme: 'current', layout: 'responsive' };
+renderComponents(preview);</code></pre><p id="copy-status" class="x-caption" role="status"></p></div>
+          </section>
+
+          <section id="gallery-cards" class="x-section" aria-labelledby="cards-title">
+            <div class="x-heading"><p class="x-eyebrow">02 / Cards</p><h3 id="cards-title">Different content, shared structure</h3></div>
+            <div class="x-feature-grid">
+              <article class="x-feature"><span class="x-icon" aria-hidden="true">↗</span><h4>Event routing</h4><p>Bring incoming signals into a single place for review.</p><details><summary>Explore pattern</summary><p>A feature card pairs a compact icon, heading, description, and disclosure.</p></details></article>
+              <article class="x-feature"><span class="x-icon" aria-hidden="true">◎</span><h4>Access settings</h4><p>Keep permissions visible alongside each connection.</p><details><summary>Explore pattern</summary><p>Text and icon cues communicate meaning without relying on color alone.</p></details></article>
+              <article class="x-feature"><span class="x-icon" aria-hidden="true">≋</span><h4>Activity history</h4><p>Inspect recent events in a calm, readable interface.</p><details><summary>Explore pattern</summary><p>Surface and border tokens adapt the same card to every theme.</p></details></article>
+            </div>
+            <div class="x-toolkit-grid">
+              <article class="x-toolkit"><span class="x-icon" aria-hidden="true">CA</span><h4>Calendar</h4><p>Appointments &amp; availability</p><span class="x-tag">Ready</span></article>
+              <article class="x-toolkit"><span class="x-icon" aria-hidden="true">FI</span><h4>Files</h4><p>Documents &amp; attachments</p><span class="x-tag">Preview</span></article>
+              <article class="x-toolkit"><span class="x-icon" aria-hidden="true">ME</span><h4>Messages</h4><p>Conversations &amp; updates</p><span class="x-tag">Ready</span></article>
+              <article class="x-toolkit"><span class="x-icon" aria-hidden="true">TA</span><h4>Tasks</h4><p>Assignments &amp; progress</p><span class="x-tag">Sample</span></article>
+            </div>
+            <figure class="x-quote"><blockquote>A useful theme makes the same content feel consistent across every component.</blockquote><figcaption>Sample testimonial · Design review</figcaption></figure>
+            <div class="x-spotlight"><p class="x-eyebrow">Your next comparison</p><h3>Try the same layout in another palette.</h3><a class="x-button x-button-primary" href="#extended-title">Back to the collection</a></div>
+          </section>
+
+          <section id="gallery-forms" class="x-section" aria-labelledby="forms-title">
+            <div class="x-heading"><p class="x-eyebrow">03 / Forms &amp; actions</p><h3 id="forms-title">A complete setup form</h3><p>Try validation, reveal the sample key, and save locally to this preview.</p></div>
+            <form id="sample-setup" class="x-form" novalidate>
+              <label class="x-field">Contact email<input id="sample-email" name="email" type="email" placeholder="name@example.com" required aria-describedby="email-help email-error" /><small id="email-help">Use a sample address. Nothing is sent.</small><span id="email-error" class="x-error" hidden>Enter an email address in the form name@example.com.</span></label>
+              <div class="x-field"><label for="sample-key">Demo API key</label><div class="x-input-action"><input id="sample-key" type="password" value="demo_key_not_a_secret" autocomplete="off" /><button id="reveal-key" class="x-button" type="button" aria-controls="sample-key" aria-pressed="false">Show</button></div><small>Illustrative value, not a real credential.</small></div>
+              <label class="x-field">Find a workspace<input id="workspace-search" type="search" placeholder="Filter sample workspaces" aria-controls="workspace-options" /><select id="workspace-options" aria-label="Sample workspace"><option>Design lab</option><option>Engineering</option><option>Operations</option></select><small id="workspace-count" role="status">3 workspaces available</small></label>
+              <label class="x-field">Managed setting<input value="Read-only sample" readonly /><small>This field can be selected, but cannot be edited.</small></label>
+              <label class="x-field">Unavailable setting<input value="Requires a connection" disabled /><small>Disabled state example.</small></label>
+              <label class="x-check"><input type="checkbox" role="switch" checked /> Enable preview notifications</label>
+              <div class="x-form-actions"><button class="x-button x-button-primary" type="submit">Save preview</button><button class="x-button" type="reset">Reset</button><button class="x-button x-outline" disabled type="button">Unavailable</button><p id="form-status" role="status"></p></div>
+            </form>
+          </section>
+
+          <section id="gallery-tokens" class="x-section" aria-labelledby="tokens-title">
+            <div class="x-heading"><p class="x-eyebrow">04 / Foundations</p><h3 id="tokens-title">Geometry, rhythm, and depth</h3><p>These added samples explore the reference scale without changing the original components above.</p></div>
+            <h4>Corner radius</h4><div class="x-radius-row">
+              <div style="--sample-radius:0px">0px</div><div style="--sample-radius:4px">4px</div><div style="--sample-radius:6px">6px</div><div style="--sample-radius:8px">8px</div><div style="--sample-radius:12px">12px</div><div style="--sample-radius:16px">16px</div><div style="--sample-radius:9999px">Pill</div>
+            </div>
+            <h4>Spacing</h4><div class="x-spacing-row">
+              <div><span style="width:4px"></span><code>4</code></div><div><span style="width:8px"></span><code>8</code></div><div><span style="width:12px"></span><code>12</code></div><div><span style="width:16px"></span><code>16</code></div><div><span style="width:20px"></span><code>20</code></div><div><span style="width:24px"></span><code>24</code></div><div><span style="width:32px"></span><code>32</code></div><div><span style="width:48px"></span><code>48</code></div><div><span style="width:96px"></span><code>96px</code></div>
+            </div>
+            <h4>Surface elevation</h4><div class="x-elevation-grid"><div class="x-level-canvas">Canvas</div><div class="x-level-deep">Recessed</div><div class="x-level-card">Card</div><div class="x-level-raised">Raised</div></div>
+            <div class="x-type-grid"><div><span class="x-eyebrow">Display / 500</span><p class="x-display-sample">Clarity at every size.</p></div><div><span class="x-eyebrow">Body / 16px</span><p>Body copy pairs a comfortable line height with a softer text tone.</p><code>Monospace / 13px</code><p><span class="x-tag">New</span> <span class="x-tag">Beta</span> <span class="x-tag">Stable</span></p></div></div>
+          </section>
+
+          <section id="gallery-responsive" class="x-section" aria-labelledby="responsive-title">
+            <div class="x-heading"><p class="x-eyebrow">05 / Responsive behavior</p><h3 id="responsive-title">Watch the layout adapt</h3><p>Current viewport: <output id="viewport-width"></output> · <strong id="viewport-range"></strong></p></div>
+            <div class="x-table-wrap" tabindex="0" role="region" aria-label="Responsive breakpoint table"><table><thead><tr><th>Viewport</th><th>Toolkit cards</th><th>Terminal panes</th><th>Gallery navigation</th></tr></thead><tbody><tr><td>Below 640px</td><td>1 column</td><td>1 column</td><td>Menu button</td></tr><tr><td>640–767px</td><td>2 columns</td><td>2 columns</td><td>Menu button</td></tr><tr><td>768–1023px</td><td>2 columns</td><td>2 columns</td><td>Inline links</td></tr><tr><td>1024px and above</td><td>4 columns</td><td>2 columns</td><td>Inline links</td></tr></tbody></table></div>
+            <p class="x-caption">The page retains its 1200px container cap. Only the new gallery uses these trigger points; existing examples keep their current layout rules.</p>
+          </section>
+          <footer class="x-footer"><div><strong>Explore</strong><a href="#gallery-cards">Card patterns</a><a href="#gallery-forms">Form states</a></div><div><strong>Compare</strong><a href="composio-light.html">Composio Light</a><a href="composio-dark.html">Composio Dark</a></div><div><strong>Reference</strong><a href="https://getdesign.md/composio/design-md">Design analysis</a><span>Independent adaptation</span></div></footer>
+        </section>
+
       </main>
     </div>
 
     <script src="script.js"></script>
+    <script src="gallery.js"></script>
   </body>
 </html>

@@ -21,6 +21,44 @@ The repository is configured to publish as a GitHub Pages site via the Pages dep
 - Light/dark theme switching
 - Multiple theme presets for visual comparison
 - Semantic examples for buttons, fields, badges, alerts, tables, and typography
+
+## Composio pages and extended gallery
+
+Open [Composio Light](composio-light.html) or [Composio Dark](composio-dark.html),
+or use the two new links in the theme selector. The original eight themes also support
+direct links such as `index.html?theme=hmi-dark`. Reloading preserves that URL's theme.
+
+The new gallery is appended below the original examples on every page. It adds feature
+and toolkit cards, testimonial and spotlight layouts, a four-pane terminal, a code block
+with copy feedback, email validation, password reveal, workspace filtering, read-only and
+disabled fields, a notification switch, reset/save feedback, disclosure panels, navigation,
+spacing/radius/elevation samples, and a live viewport indicator. All data is illustrative;
+the form sends nothing and its values are not persisted beyond the page session.
+
+`gallery.css` scopes the additions to `x-` classes. Existing components retain their styling
+in the original themes. Composio overrides are scoped to those two themes only. Gallery
+toolkit columns change from one to two at 640px, then four at 1024px. Terminal panes use
+two columns from 640px, and the gallery menu switches to inline links at 768px. Existing
+layout breakpoints remain unchanged, including a pre-existing narrow-width table overflow.
+
+The implementation references the independent
+[Composio design analysis](https://getdesign.md/composio/design-md) and its
+[DESIGN.md source](https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/composio/DESIGN.md).
+The dark theme follows its blue CTA and neutral surface palette; the light theme is our
+adaptation. Links and focus outlines use a brighter blue in dark mode for legibility.
+Muted and error colors are adjusted for readable examples. Font stacks use Inter/system
+sans and JetBrains Mono/Consolas/monospace fallbacks; no licensed font files are bundled.
+The guide's prose and preview disagree on some mobile boundaries; this implementation
+uses explicit 640/768/1024px boundaries shown in the gallery's table.
+
+`index.html` is the shared source. After changing shared markup, run:
+
+```bash
+node build-pages.cjs
+```
+
+This regenerates the two standalone Composio HTML pages with their default theme and title.
+They share `styles.css`, `gallery.css`, `script.js`, and `gallery.js` and need no server build.
 ## HMI themes
 
 Four additional options retain the original four presets: **HMI Light**, **HMI Dark**,
