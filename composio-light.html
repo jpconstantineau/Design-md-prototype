@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="gallery.css" />
     <link rel="stylesheet" href="theme-styles.css" />
     <link rel="stylesheet" href="sentry.css" />
+    <link rel="stylesheet" href="palette.css" />
   </head>
   <body>
     <div class="app-shell">
@@ -108,84 +109,11 @@
           </div>
         </section>
 
-        <section class="panel">
-          <div class="section-heading">
-            <h3>Color tokens</h3>
-            <span>What each variable affects</span>
-          </div>
-
-          <div class="swatch-grid">
-            <div class="swatch">
-              <span class="swatch-color swatch-bg"></span>
-              <div>
-                <strong>--bg</strong>
-                <small>Whole-page background</small>
-              </div>
-            </div>
-            <div class="swatch">
-              <span class="swatch-color swatch-surface"></span>
-              <div>
-                <strong>--surface</strong>
-                <small>Panels and cards</small>
-              </div>
-            </div>
-            <div class="swatch">
-              <span class="swatch-color swatch-text"></span>
-              <div>
-                <strong>--text</strong>
-                <small>Headings and readable text</small>
-              </div>
-            </div>
-            <div class="swatch">
-              <span class="swatch-color swatch-muted"></span>
-              <div>
-                <strong>--muted</strong>
-                <small>Secondary labels and metadata</small>
-              </div>
-            </div>
-            <div class="swatch">
-              <span class="swatch-color swatch-border"></span>
-              <div>
-                <strong>--border</strong>
-                <small>Separators and outlines</small>
-              </div>
-            </div>
-            <div class="swatch">
-              <span class="swatch-color swatch-primary"></span>
-              <div>
-                <strong>--primary</strong>
-                <small>Calls to action and focus states</small>
-              </div>
-            </div>
-            <div class="swatch">
-              <span class="swatch-color swatch-secondary"></span>
-              <div>
-                <strong>--secondary</strong>
-                <small>Complementary UI accents</small>
-              </div>
-            </div>
-            <div class="swatch">
-              <span class="swatch-color swatch-success"></span>
-              <div>
-                <strong>--success</strong>
-                <small>Positive actions and validation</small>
-              </div>
-            </div>
-            <div class="swatch">
-              <span class="swatch-color swatch-warning"></span>
-              <div>
-                <strong>--warning</strong>
-                <small>Cautions and attention indicators</small>
-              </div>
-            </div>
-            <div class="swatch">
-              <span class="swatch-color swatch-danger"></span>
-              <div>
-                <strong>--danger</strong>
-                <small>Destructive actions and errors</small>
-              </div>
-            </div>
-          </div>
+        <section class="panel palette-panel" aria-labelledby="palette-title">
+          <div class="section-heading"><h3 id="palette-title">Complete theme palette</h3><span>Brand, surfaces, accents, and states</span></div>
+          <p>Color patches show the selected theme's tokens and values. Reference illustration colors are labeled separately from UI roles; checkerboards indicate transparency.</p>
+          <div id="theme-palette"></div>
+          <noscript>Enable JavaScript to display the active theme's color patches.</noscript>
         </section>
 
         <section class="panel">
@@ -414,6 +342,7 @@ renderComponents(preview);</code></pre><p id="copy-status" class="x-caption" rol
       </main>
     </div>
 
+    <script src="palette.js"></script>
     <script src="script.js"></script>
     <script src="gallery.js"></script>
   </body>

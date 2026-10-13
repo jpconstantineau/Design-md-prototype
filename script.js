@@ -62,6 +62,7 @@ function applyTheme(themeName) {
     themeMeta.setAttribute('content', chosenTheme.accent);
   }
   updateStyleReadout();
+  renderPalette();
 }
 
 function updateStyleReadout() {

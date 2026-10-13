@@ -22,6 +22,20 @@ The repository is configured to publish as a GitHub Pages site via the Pages dep
 - Light/dark theme switching
 - Multiple theme presets for visual comparison
 - Semantic examples for buttons, fields, badges, alerts, tables, and typography
+- Complete active palettes with labeled color patches and CSS values
+
+## Color palette display
+
+`palette.js` reads the current CSS tokens on every theme change. The palette groups surface,
+text, brand, action, state, and gallery-specific colors, including scoped gallery overrides.
+Each patch includes its token name, value, and role; transparent colors use a checkerboard.
+Tokens absent from a theme are omitted, so changing themes removes the previous brand's colors.
+
+Composio includes its brand blue, spotlight blue, and reference cyan/violet illustration
+colors. Sentry includes lime, pink, violet variants, field colors, and interaction colors.
+Reference colors that are not used as general UI colors are explicitly labeled. Core brand
+colors are exposed as named tokens so the palette and their component usage stay aligned.
+All standalone pages receive the same palette through `node build-pages.cjs`.
 
 ## Composio pages and extended gallery
 
