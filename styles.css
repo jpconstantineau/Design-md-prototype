@@ -547,7 +547,8 @@ tbody tr:last-child td {
   --primary-strong: #30363c;
   --secondary: #50565c;
   --accent: #50565c;
-  --success: #50565c;
+  --success: #24633d;
+  --badge-accent: #245b91;
   --warning: #775600;
   --danger: #b22222;
   --alarm-low: #75409a;
@@ -570,7 +571,8 @@ tbody tr:last-child td {
   --primary-strong: #e0e5e9;
   --secondary: #bcc2c8;
   --accent: #bcc2c8;
-  --success: #bcc2c8;
+  --success: #8bd5a3;
+  --badge-accent: #9ecbff;
   --warning: #f0ca62;
   --danger: #ff9696;
   --alarm-low: #d6aff5;
@@ -581,12 +583,16 @@ tbody tr:last-child td {
 }
 
 :root[data-theme="hmi-light-cvd"] {
+  --success: #75409a;
+  --badge-accent: #00665d;
   --danger: #9b4300;
-  --warning: #00679a;
+  --warning: #005f90;
   --alarm-low: #75409a;
 }
 
 :root[data-theme="hmi-dark-cvd"] {
+  --success: #d6aff5;
+  --badge-accent: #7ed8c8;
   --danger: #ffba75;
   --warning: #78caff;
   --alarm-low: #d6aff5;
@@ -601,16 +607,19 @@ tbody tr:last-child td {
 :root[data-theme^="hmi-"] .primary-button,
 :root[data-theme^="hmi-"] .secondary-button { color: var(--on-primary); }
 :root[data-theme^="hmi-"] .status-dot { box-shadow: none; }
-:root[data-theme^="hmi-"] .badge-primary { background: var(--surface-strong); }
+/* General UI extends the HMI palette with tinted semantic cards and pills. */
+:root[data-theme^="hmi-"] :is(.alert-success, .badge-success) { --semantic: var(--success); }
+:root[data-theme^="hmi-"] :is(.alert-warning, .badge-warning) { --semantic: var(--warning); }
+:root[data-theme^="hmi-"] :is(.alert-danger, .badge-danger) { --semantic: var(--danger); }
+:root[data-theme^="hmi-"] .badge-primary { --semantic: var(--badge-accent); }
 :root[data-theme^="hmi-"] .alert,
-:root[data-theme^="hmi-"] .badge-success,
-:root[data-theme^="hmi-"] .badge-warning,
-:root[data-theme^="hmi-"] .badge-danger {
-  background: var(--surface-strong);
+:root[data-theme^="hmi-"] .badge:not(.badge-neutral) {
+  background: color-mix(in srgb, var(--semantic) 14%, var(--surface));
+  border: 1px solid var(--semantic);
+  color: var(--text);
 }
-/* Generic component examples stay neutral; priority hues belong to alarms. */
-:root[data-theme^="hmi-"] .alert,
-:root[data-theme^="hmi-"] .badge { color: var(--text); border: 1px solid var(--border); }
+:root[data-theme^="hmi-"] .alert strong,
+:root[data-theme^="hmi-"] .badge:not(.badge-neutral) { color: var(--semantic); }
 :root[data-theme^="hmi-"] :is(button, a, input, select, textarea):focus-visible {
   outline: 3px solid var(--primary);
   outline-offset: 3px;
@@ -618,7 +627,7 @@ tbody tr:last-child td {
 }
 :root[data-theme^="hmi-"] input { accent-color: var(--primary); }
 .alarm-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr)); gap: 1rem; }
-.alarm-sample { --state-color: var(--success); display: flex; align-items: center; gap: 0.8rem; padding: 1rem; border: 2px solid var(--state-color); border-radius: 8px; }
+.alarm-sample { --state-color: var(--muted); display: flex; align-items: center; gap: 0.8rem; padding: 1rem; border: 2px solid var(--state-color); border-radius: 8px; }
 .alarm-sample p { margin: 0.25rem 0 0; color: var(--muted); font-size: 0.85rem; }
 .priority-1 { --state-color: var(--danger); }
 .priority-2 { --state-color: var(--warning); }

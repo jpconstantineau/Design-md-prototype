@@ -27,8 +27,12 @@ Four additional options retain the original four presets: **HMI Light**, **HMI D
 **HMI Light (color-blind)**, and **HMI Dark (color-blind)**.
 
 The HMI presets use neutral gray surfaces, neutral normal/running states and controls,
-and reserved alarm hues. The component gallery stays neutral except for token swatches
-and the dedicated alarm examples. High, medium, and low priorities have persistent P1/P2/P3
+and a general-purpose extension with colored Success, Warning, and Danger cards and pills.
+Their backgrounds use a 14% semantic-color tint, with matching borders and headings.
+Success is green in conventional themes and purple in color-blind themes; Warning and
+Danger retain the theme's ochre/red or blue/orange colors. Primary pills use blue or teal,
+while Neutral pills remain gray. Colors are deliberately reused beyond alarms in this
+playground. High, medium, and low priorities have persistent P1/P2/P3
 labels and octagon/triangle/square symbols in every HMI preset. Priority colors do not
 encode acknowledgment state. These are static examples, not an operating alarm system.
 
@@ -37,7 +41,7 @@ encode acknowledgment state. These are static examples, not an operating alarm s
 | Canvas | `#d4d6d8` | `#202428` | `#d4d6d8` | `#202428` |
 | Surface | `#eceeef` | `#2b3035` | `#eceeef` | `#2b3035` |
 | P1 high | `#b22222` | `#ff9696` | `#9b4300` | `#ffba75` |
-| P2 medium | `#775600` | `#f0ca62` | `#00679a` | `#78caff` |
+| P2 medium | `#775600` | `#f0ca62` | `#005f90` | `#78caff` |
 | P3 low | `#75409a` | `#d6aff5` | `#75409a` | `#d6aff5` |
 
 The conventional palette uses red, ochre, and purple. The color-blind variants replace
