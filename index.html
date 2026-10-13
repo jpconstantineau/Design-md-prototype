@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Theme playground for testing CSS color variables across light and dark color schemes."
+    />
+    <title>CSS Color Scheme Playground</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Design system playground</p>
+          <h1>CSS Color Scheme Test Page</h1>
+        </div>
+
+        <div class="theme-picker" aria-label="Theme selector">
+          <button class="theme-option is-active" data-theme-option="light" type="button">
+            Light
+          </button>
+          <button class="theme-option" data-theme-option="dark" type="button">Dark</button>
+          <button class="theme-option" data-theme-option="sunset" type="button">Sunset</button>
+          <button class="theme-option" data-theme-option="ocean" type="button">Ocean</button>
+        </div>
+      </header>
+
+      <main class="page-grid">
+        <section class="panel hero-panel">
+          <div class="panel-header">
+            <span class="status-dot"></span>
+            <p>Theme overview</p>
+          </div>
+
+          <div class="hero-content">
+            <div>
+              <p class="section-kicker">Purpose</p>
+              <h2>Evaluate how colors behave across semantic UI states.</h2>
+            </div>
+            <p class="lead">
+              This page demonstrates how a design system reacts when background, surface,
+              border, text, accent, status, and interaction colors are adjusted for light and
+              dark themes.
+            </p>
+          </div>
+
+          <div class="hero-metrics">
+            <div class="metric-card">
+              <span class="metric-label">Background</span>
+              <strong>Page canvas</strong>
+            </div>
+            <div class="metric-card">
+              <span class="metric-label">Surface</span>
+              <strong>Cards / panels</strong>
+            </div>
+            <div class="metric-card">
+              <span class="metric-label">Accent</span>
+              <strong>Actions / focus</strong>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="section-heading">
+            <h3>Color tokens</h3>
+            <span>What each variable affects</span>
+          </div>
+
+          <div class="swatch-grid">
+            <div class="swatch">
+              <span class="swatch-color swatch-bg"></span>
+              <div>
+                <strong>--bg</strong>
+                <small>Whole-page background</small>
+              </div>
+            </div>
+            <div class="swatch">
+              <span class="swatch-color swatch-surface"></span>
+              <div>
+                <strong>--surface</strong>
+                <small>Panels and cards</small>
+              </div>
+            </div>
+            <div class="swatch">
+              <span class="swatch-color swatch-text"></span>
+              <div>
+                <strong>--text</strong>
+                <small>Headings and readable text</small>
+              </div>
+            </div>
+            <div class="swatch">
+              <span class="swatch-color swatch-muted"></span>
+              <div>
+                <strong>--muted</strong>
+                <small>Secondary labels and metadata</small>
+              </div>
+            </div>
+            <div class="swatch">
+              <span class="swatch-color swatch-border"></span>
+              <div>
+                <strong>--border</strong>
+                <small>Separators and outlines</small>
+              </div>
+            </div>
+            <div class="swatch">
+              <span class="swatch-color swatch-primary"></span>
+              <div>
+                <strong>--primary</strong>
+                <small>Calls to action and focus states</small>
+              </div>
+            </div>
+            <div class="swatch">
+              <span class="swatch-color swatch-secondary"></span>
+              <div>
+                <strong>--secondary</strong>
+                <small>Complementary UI accents</small>
+              </div>
+            </div>
+            <div class="swatch">
+              <span class="swatch-color swatch-success"></span>
+              <div>
+                <strong>--success</strong>
+                <small>Positive actions and validation</small>
+              </div>
+            </div>
+            <div class="swatch">
+              <span class="swatch-color swatch-warning"></span>
+              <div>
+                <strong>--warning</strong>
+                <small>Cautions and attention indicators</small>
+              </div>
+            </div>
+            <div class="swatch">
+              <span class="swatch-color swatch-danger"></span>
+              <div>
+                <strong>--danger</strong>
+                <small>Destructive actions and errors</small>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="section-heading">
+            <h3>Type and content</h3>
+            <span>Text contrast and hierarchy</span>
+          </div>
+
+          <div class="type-demo">
+            <h2>Heading 2 visual rhythm</h2>
+            <p class="lead">
+              Lead text shows how the primary type color interacts with the page background and
+              surface contrast.
+            </p>
+            <p>
+              Body text validates legibility against your chosen background and neutral surfaces,
+              while captions and metadata confirm muted-text readability across the theme.
+            </p>
+            <blockquote>
+              “Contrast is what makes a palette feel intentional. Test both default and semantic
+              color roles to avoid unreadable combinations.”
+            </blockquote>
+            <ul>
+              <li>List item styling reflects border and text color behavior.</li>
+              <li>Links should remain accessible in both light and dark themes.</li>
+              <li><a href="#">Inline links</a> should stand out without overwhelming bystanders.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="section-heading">
+            <h3>Forms and controls</h3>
+            <span>Inputs, states, and outcomes</span>
+          </div>
+
+          <div class="control-stack">
+            <label class="field">
+              <span>Text input</span>
+              <input type="text" value="Sample value" aria-label="Text input sample" />
+            </label>
+
+            <label class="field">
+              <span>Select menu</span>
+              <select aria-label="Select sample">
+                <option>Option A</option>
+                <option>Option B</option>
+                <option>Option C</option>
+              </select>
+            </label>
+
+            <label class="field">
+              <span>Textarea</span>
+              <textarea aria-label="Textarea sample">This area shows how surface and border colors affect typing focus.</textarea>
+            </label>
+
+            <div class="check-grid">
+              <label class="check-row"><input type="checkbox" checked /> Checkbox</label>
+              <label class="check-row"><input type="radio" name="demo-radio" checked /> Radio</label>
+              <label class="check-row"><input type="checkbox" /> Disabled</label>
+            </div>
+
+            <div class="button-row">
+              <button class="primary-button" type="button">Primary action</button>
+              <button class="secondary-button" type="button">Secondary</button>
+              <button class="ghost-button" type="button">Ghost</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="section-heading">
+            <h3>Components</h3>
+            <span>Surface and semantic state testing</span>
+          </div>
+
+          <div class="component-row">
+            <div class="alert alert-success">
+              <strong>Success</strong>
+              <span>Positive status color should remain readable and calm.</span>
+            </div>
+            <div class="alert alert-warning">
+              <strong>Warning</strong>
+              <span>Warning states need enough contrast without overpowering the page.</span>
+            </div>
+            <div class="alert alert-danger">
+              <strong>Danger</strong>
+              <span>Destructive states should still read clearly in dark mode.</span>
+            </div>
+          </div>
+
+          <div class="badge-row">
+            <span class="badge badge-neutral">Neutral</span>
+            <span class="badge badge-primary">Primary</span>
+            <span class="badge badge-success">Success</span>
+            <span class="badge badge-warning">Warning</span>
+            <span class="badge badge-danger">Danger</span>
+          </div>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Element</th>
+                <th>Purpose</th>
+                <th>Visual result</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Header</td>
+                <td>Navigation and hierarchy</td>
+                <td>Strong contrast</td>
+              </tr>
+              <tr>
+                <td>Cards</td>
+                <td>Grouping information</td>
+                <td>Clear surface separation</td>
+              </tr>
+              <tr>
+                <td>Buttons</td>
+                <td>Primary callouts</td>
+                <td>High emphasis</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
