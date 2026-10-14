@@ -19,6 +19,23 @@ The repository is configured to publish as a GitHub Pages site via the Pages dep
 
 ## Included
 
+The first ten designs displayed on [getdesign.md](https://getdesign.md/) on October 14,
+2026 are now selectable: Mobbin, 1win, Al Jazeera, DJI, Jobright, Mercury, mydealz,
+NerdWallet, Oracle, and Oura. “Top ten” means homepage display order, not a popularity
+ranking. Open `index.html?theme=mobbin` (or any corresponding theme ID) to share a preset.
+
+Their downloaded guides are preserved in `themes/<theme>/DESIGN.md`. Mobbin comes from
+the site's public download; the other nine come from its linked MIT-licensed
+[source collection](https://github.com/VoltAgent/awesome-design-md). These independent
+analyses are adapted to the shared component playground. Proprietary fonts use local
+system fallbacks; Mercury uses its homepage night palette, Oracle uses its product-page
+serif headings, and semantic states use readable playground colors. Al Jazeera's orange
+and Jobright's mint remain accents alongside black actions. The palette also lists all
+original source color tokens separately from the active component colors.
+
+`node build-pages.cjs` rebuilds `catalog-themes.css`, `catalog-themes.js`, and existing
+standalone pages. Adjust the profiles in `build-catalog-themes.cjs` to update adaptations.
+
 - Light/dark theme switching
 - Multiple theme presets for visual comparison
 - Semantic examples for buttons, fields, badges, alerts, tables, and typography

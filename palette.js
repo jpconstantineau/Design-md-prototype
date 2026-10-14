@@ -37,6 +37,8 @@ function renderPalette() {
     ], galleryStyle]
   ];
   const host = document.querySelector('#theme-palette');
+  const catalog = catalogThemes[document.documentElement.dataset.theme];
+  if (catalog) groups.push(['Source guide reference colors', Object.keys(catalog.colors).map(key => [`--reference-${key}`, `Source: ${key}`])]);
   host.replaceChildren();
   for (const [title, tokens, scope = rootStyle] of groups) {
     const section = document.createElement('section');

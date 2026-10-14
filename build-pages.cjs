@@ -1,5 +1,6 @@
 // Keep standalone theme pages in sync with the shared playground.
 const fs = require('node:fs');
+require('./build-catalog-themes.cjs');
 const source = fs.readFileSync('index.html', 'utf8');
 const pages = [
   { theme: 'composio-light', name: 'Composio Light', accent: '#0007cd' },

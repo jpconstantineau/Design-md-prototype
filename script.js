@@ -42,6 +42,7 @@ const themeMap = {
 };
 
 const root = document.documentElement;
+Object.assign(themeMap, catalogThemes);
 const buttons = [...document.querySelectorAll('[data-theme-option]')];
 
 function applyTheme(themeName) {
