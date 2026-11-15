@@ -1,0 +1,18 @@
+{
+  "repository": "https://github.com/google-labs-code/design.md",
+  "commit": "1ed38aa9dd4451b9039f9aeb9ed1d2579edafddf",
+  "formatVersion": "alpha",
+  "retrieved": "2026-11-15",
+  "files": [
+    {
+      "path": "references/upstream/design-md-spec.md",
+      "sourcePath": "docs/spec.md",
+      "sha256": "9894f2021da2fa3b0a17bc87625813957981bf684587eafbe255e6a360875d03"
+    },
+    {
+      "path": "references/upstream/LICENSE",
+      "sourcePath": "LICENSE",
+      "sha256": "1bdd03995456d191707e379eb06ceac20cf30d520bec90c97c2b6d220906c66e"
+    }
+  ]
+}
