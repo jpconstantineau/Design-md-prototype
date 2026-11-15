@@ -247,7 +247,7 @@ philosophy, full standards review, and operator evaluation under actual lighting
 
 The repository-local [design-standards skill](.agents/skills/design-standards/SKILL.md)
 routes interface and DESIGN.md work to separate references for ISO 9241-110,
-ISO 9241-112, WCAG 2.2 A/AA, ISA-101, ISA-100's distinct wireless scope, HSE feedback
+ISO 9241-112, WCAG 2.2 A/AA, ISA-101, HSE feedback
 and alarm guidance, and Material 3. It includes a review checklist and an illustrative
 DESIGN.md file, without changing the playground themes.
 
