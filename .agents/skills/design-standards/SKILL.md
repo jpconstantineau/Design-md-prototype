@@ -16,8 +16,8 @@ description: Design or review application interfaces using task, state, accessib
 
 | When working on... | Read... |
 | --- | --- |
-| Task flow, controls, Save/immediate effects, errors, or recovery | [ISO 9241-110: interaction](references/iso-9241-110.md) |
-| Information hierarchy, selected scope, state meaning, labels, or grouping | [ISO 9241-112: presentation](references/iso-9241-112.md) |
+| Task flow, controls, Save/immediate effects, errors, or recovery | [ISO 9241-110: seven interaction principles](references/iso-9241-110.md#the-seven-interaction-principles) |
+| Information hierarchy, selected scope, state meaning, labels, or grouping | [ISO 9241-112: six presentation principles](references/iso-9241-112.md#the-six-presentation-principles) |
 | Accessibility planning, implementation, or a conformance question | [WCAG 2.2 A and AA](references/wcag-22.md) |
 | Operational dashboards, normal/exception emphasis, or industrial HMI context | [ISA-101: HMI scope](references/isa-101.md); for public feedback/alarm guidance, [HSE control systems](references/hse-control-systems.md) |
 | Material 3 components/tokens, or the GoDav design system | [Material 3](references/material-3.md) |
