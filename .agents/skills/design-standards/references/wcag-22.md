@@ -1,40 +1,63 @@
 # WCAG 2.2 A and AA
 
-Use for accessibility requirements, implementation checks, and conformance questions.
+Use for accessibility planning, implementation checks, and conformance questions. POUR organizes the checks below: **Perceivable, Operable, Understandable, Robust**.
 
 ## Scope and evidence
 
-[WCAG 2.2](https://www.w3.org/TR/WCAG22/) is the normative source. An AA claim requires all applicable A and AA success criteria across full pages and complete processes, plus the other [conformance requirements](https://www.w3.org/WAI/WCAG22/Understanding/conformance). Sources verified 2026-11-15.
+[WCAG 2.2](https://www.w3.org/TR/WCAG22/) is the normative source; the current W3C Recommendation is dated **12 December 2024**. An AA claim requires all applicable A and AA success criteria across full pages and complete processes, plus the other [conformance requirements](https://www.w3.org/WAI/WCAG22/Understanding/conformance). Sources checked 2026-11-15.
 
-The checks below emphasize dashboard risks; they are not an exhaustive WCAG audit. Build the complete applicable criterion inventory from the normative source for a formal assessment. An automated scan, screenshot, token linter, or component-library choice cannot establish conformance alone.
+[ISO/IEC 40500:2025](https://www.iso.org/standard/91029.html) adopts the October 2023 WCAG 2.2 text, as [W3C explains](https://www.w3.org/WAI/standards-guidelines/wcag/#iso). The pending ISO revision is not a published replacement. Record the dated text used rather than assuming the ISO adoption and updated W3C text are identical.
 
-For every scoped criterion, record pass, fail, not tested, or not applicable with a reason. Include page/state, task, browser, assistive technology, evidence, and unresolved issues. Untested criteria remain unknown.
+The checks here emphasize application risks, not a complete audit. Build the full applicable criterion inventory from the normative source or [W3C quick reference](https://www.w3.org/WAI/WCAG22/quickref/). A scan, screenshot, token linter, or component library cannot establish conformance alone.
 
-## Operate and understand the workflow
+Treat WCAG 2.2 AA as the project accessibility target, not automatic ACA, AODA, ADA, or EAA compliance. Verify the applicable jurisdiction, entity, content, legal instrument, edition, and exceptions separately. [W3C's policy directory](https://www.w3.org/WAI/policies/) is a starting point, not legal advice.
 
-- Use semantic controls and expose names, roles, values, relationships, and state (1.3.1, 4.1.2). Match visible labels and accessible names where applicable (2.5.3).
-- Complete the task with keyboard alone, including menus, dialogs, error recovery, and closing transient UI (2.1.1, 2.1.2). Verify logical focus order (2.4.3) and meaningful navigation/headings (2.4.1, 2.4.6).
-- Keep keyboard focus visible (2.4.7). At AA, author-created content must not entirely obscure the focused component (2.4.11). [Focus Appearance](https://www.w3.org/WAI/WCAG22/Understanding/focus-appearance.html), including its area and state-contrast requirements, is AAA 2.4.13; adopt it as a stronger local rule only when labeled as such. See [AA focus visibility under overlays](https://www.w3.org/WAI/WCAG22/Understanding/focus-not-obscured-minimum.html).
-- Keep context changes predictable; show labels/instructions, identify errors in text, and suggest useful corrections when applicable (3.2.1, 3.2.2, 3.3.1-3.3.3). Apply additional error prevention where the operation falls under 3.3.4.
-- Expose relevant [status messages](https://www.w3.org/WAI/WCAG22/Understanding/status-messages.html) through suitable roles/properties without forcing focus (4.1.3). Choose polite or assertive announcement based on urgency; avoid announcing every changing value.
+## Perceivable
 
-## Perceive content and state
+Make information available in usable forms, including when a user cannot see a particular image, color, layout, or video.
 
-- Test actual foreground/background pairs, including opacity and state overlays. [Text contrast](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html) is at least 4.5:1 for normal text and 3:1 for qualifying large text (18pt regular or 14pt bold), subject to the criterion's exceptions (1.4.3). Do not round a failing result up to a pass.
-- Test meaningful control/state cues and graphics at 3:1 against adjacent colors where [non-text contrast](https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html) applies (1.4.11). Decorative borders and every hover/default pair do not automatically require that ratio. Preserve the criterion's exceptions.
-- Convey meaning without color alone (1.4.1). Check relevant non-text content alternatives (1.1.1); charts need usable equivalents for their information, not only a generic image label.
-- Resize text to 200% without loss of content or functionality (1.4.4). Verify [reflow](https://www.w3.org/WAI/WCAG22/Understanding/reflow.html) at a 320 CSS px equivalent width, such as a 1280px viewport at 400% zoom (1.4.10). Apply necessary two-dimensional-layout exceptions only to the relevant content, not the whole dashboard.
-- Test [text-spacing overrides](https://www.w3.org/WAI/WCAG22/Understanding/text-spacing.html): line 1.5, paragraph 2, letter 0.12, and word 0.16 times font size, without loss (1.4.12). These are resilience-test values, not mandatory default typography tokens.
-- Review hover/focus disclosures, timing, animation, flashes, and media criteria when present (including 1.4.13, 2.2.1, 2.2.2, 2.3.1 and applicable 1.2 criteria).
+- **Text contrast (1.4.3):** test actual pairs, including opacity and overlays, at 4.5:1 for normal text and 3:1 for qualifying large text (18pt/24 CSS px regular or 14pt/about 18.67 CSS px bold). Preserve incidental, inactive, and logotype exceptions. Never round a failure upward. [Text contrast](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html).
+- **Non-text contrast (1.4.11):** meaningful control/state cues and graphic information need 3:1 against adjacent colors where applicable. Not every decorative border or hover/default pair needs that ratio; inactive, unmodified user-agent, and essential-graphic exceptions matter. [Non-text contrast](https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html).
+- **Alternatives (1.1.1) and color (1.4.1):** give informative images an equivalent-purpose alternative and controls a meaningful name; hide purely decorative images from assistive technology. Charts need usable information, not only a generic image label. Combine color with other meaningful cues. [Non-text content](https://www.w3.org/WAI/WCAG22/Understanding/non-text-content.html), [use of color](https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html).
+- **Media (1.2):** prerecorded audio-only needs an equivalent alternative; prerecorded video-only needs an equivalent alternative or audio. Provide captions for prerecorded synchronized audio (subject to the media-alternative exception) and live synchronized audio at AA. Prerecorded synchronized video needs audio description at AA when important visuals are not already described by its soundtrack; a transcript alone does not replace that requirement. Check the relevant [audio/video-only](https://www.w3.org/WAI/WCAG22/Understanding/audio-only-and-video-only-prerecorded.html), [prerecorded captions](https://www.w3.org/WAI/WCAG22/Understanding/captions-prerecorded.html), [live captions](https://www.w3.org/WAI/WCAG22/Understanding/captions-live.html), and [audio description](https://www.w3.org/WAI/WCAG22/Understanding/audio-description-prerecorded.html) criteria.
+- **Resize and reflow (1.4.4, 1.4.10):** resize text to 200% without loss. Test reflow at 320 CSS px width for vertically scrolling content, or 256 CSS px height for horizontally scrolling content. A 1280px viewport at 400% zoom can test the width case. Necessary two-dimensional content has an exception; it does not exempt the whole dashboard or normal prose in table cells. Reflow need not mean one identical column layout. [Resize text](https://www.w3.org/WAI/WCAG22/Understanding/resize-text.html), [reflow](https://www.w3.org/WAI/WCAG22/Understanding/reflow.html).
+- **Spacing (1.4.12):** tolerate user overrides of line height 1.5, paragraph spacing 2, letter spacing 0.12, and word spacing 0.16 times font size without loss, where the criterion applies. These are test settings, not mandatory authored defaults. [Text spacing](https://www.w3.org/WAI/WCAG22/Understanding/text-spacing.html).
 
-## Include WCAG 2.2 additions when relevant
+**Example/check:** inspect a failure chart with color removed, its accessible equivalent, zoom, and spacing overrides. Verify users can still identify the affected object, magnitude, and required action. Record actual contrast measurements and exceptions.
 
-- [Target Size (Minimum)](https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html), 2.5.8 AA: at least 24 by 24 CSS px or a documented exception, including the specified spacing exception. A 44 by 44 target is the enhanced AAA criterion or a local comfort rule, not the AA minimum.
-- [Dragging Movements](https://www.w3.org/WAI/WCAG22/Understanding/dragging-movements.html), 2.5.7 AA: provide a single-pointer alternative that does not require dragging when applicable. Keyboard support alone does not satisfy this criterion.
-- [Redundant Entry](https://www.w3.org/WAI/WCAG22/Understanding/redundant-entry.html), 3.3.7 A: reuse or make prior input selectable within the same process, subject to exceptions.
-- [Accessible Authentication (Minimum)](https://www.w3.org/WAI/WCAG22/Understanding/accessible-authentication-minimum.html), 3.3.8 AA: support an accessible method or assistance such as password-manager use and paste, and evaluate applicable exceptions. This is not a blanket ban on CAPTCHA.
-- Check consistent help when repeated help mechanisms are present (3.2.6 A).
+## Operable
+
+Keep the workflow usable with appropriate keyboard and pointer interaction, without trapping users or hiding their place.
+
+- **Keyboard and orientation (2.1.1, 2.1.2, 2.4.1, 2.4.3, 2.4.6):** complete the task, menus, dialogs, and recovery using appropriate keyboard patterns. Use logical focus order, bypass repeated blocks, and meaningful headings. Composite widgets may use arrow keys rather than making every child a Tab stop. [Keyboard](https://www.w3.org/WAI/WCAG22/Understanding/keyboard.html), [no keyboard trap](https://www.w3.org/WAI/WCAG22/Understanding/no-keyboard-trap.html), [focus order](https://www.w3.org/WAI/WCAG22/Understanding/focus-order.html).
+- **Focus (2.4.7, 2.4.11):** keyboard focus must be visible; author-created content must not entirely obscure the focused component at AA. Fully unobscured focus (2.4.12) and numeric focus-area/state-contrast rules (2.4.13) are AAA, though useful stronger local goals. [Visible focus](https://www.w3.org/WAI/WCAG22/Understanding/focus-visible.html), [AA obscuring rule](https://www.w3.org/WAI/WCAG22/Understanding/focus-not-obscured-minimum.html), [AAA focus appearance](https://www.w3.org/WAI/WCAG22/Understanding/focus-appearance.html).
+- **Targets (2.5.8 AA):** provide at least 24 by 24 CSS px or satisfy a specified spacing, equivalent-control, inline, user-agent, or essential exception. The spacing test uses 24px-diameter circles centered on undersized targets, not a blanket 24px gap. A 44 by 44 target is AAA 2.5.5 or a local comfort goal. [Minimum target size](https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html).
+- **Dragging (2.5.7 AA):** provide a single-pointer non-drag alternative unless essential or an unmodified user-agent control. Keyboard support alone is insufficient; the alternative need not take exactly one click. [Dragging movements](https://www.w3.org/WAI/WCAG22/Understanding/dragging-movements.html).
+- **Transient content:** evaluate hover/focus disclosures (1.4.13), time limits (2.2.1), moving/updating content (2.2.2), and flashes (2.3.1) when present. Apply their conditions and exceptions rather than banning all animation. [Hover/focus content](https://www.w3.org/WAI/WCAG22/Understanding/content-on-hover-or-focus.html), [pause/stop/hide](https://www.w3.org/WAI/WCAG22/Understanding/pause-stop-hide.html).
+
+**Example/check:** complete a permission change, open and close its explanation, reorder an item without dragging, and recover from an error. Test sticky headers, banners, and dialogs for focus visibility and correct return focus.
+
+## Understandable
+
+Use predictable behavior and explanations that help people complete and recover from the task.
+
+- **Navigation and help (3.2.1-3.2.4, 3.2.6):** preserve predictable context changes, consistent navigation order, and component identification. Repeated help mechanisms covered by 3.2.6 must keep their relative order across the page set; it does not require help everywhere or identical pixel positions. [Consistent navigation](https://www.w3.org/WAI/WCAG22/Understanding/consistent-navigation.html), [consistent help](https://www.w3.org/WAI/WCAG22/Understanding/consistent-help.html).
+- **Forms (3.3.1-3.3.4, 2.5.3):** provide labels/instructions, identify automatically detected errors in text, and suggest known safe corrections. Use persistent visible labels as the project pattern rather than placeholder-only instructions. Accessible names must include visible labels where applicable; extra error-prevention rules apply to the operations covered by 3.3.4. [Labels/instructions](https://www.w3.org/WAI/WCAG22/Understanding/labels-or-instructions.html), [error identification](https://www.w3.org/WAI/WCAG22/Understanding/error-identification.html), [error suggestion](https://www.w3.org/WAI/WCAG22/Understanding/error-suggestion.html), [label in name](https://www.w3.org/WAI/WCAG22/Understanding/label-in-name.html).
+- **Repeated input (3.3.7 A):** repopulate or make previously supplied information selectable within the same process, except when essential, required for security, or no longer valid. [Redundant entry](https://www.w3.org/WAI/WCAG22/Understanding/redundant-entry.html).
+- **Authentication (3.3.8 AA):** support an alternative to cognitive tests or assistance, such as password managers and paste. Evaluate the criterion's object-recognition and user-provided-content exceptions; it is not a blanket password or CAPTCHA ban. [Accessible authentication](https://www.w3.org/WAI/WCAG22/Understanding/accessible-authentication-minimum.html).
+
+**Example/check:** enter invalid data, correct it, and continue without retyping valid information. Test login with a password manager and paste, and verify error messages explain the issue without exposing private data.
+
+## Robust
+
+Expose structure and state so browsers and assistive technologies can interpret the interface.
+
+- **Semantics (1.3.1, 4.1.2):** prefer native elements with meaningful headings, landmarks, controls, names, roles, values, and states. Use ARIA for genuine gaps and implement the corresponding behavior and keyboard handling; attributes alone do not create an accessible widget. [Name/role/value](https://www.w3.org/WAI/WCAG22/Understanding/name-role-value.html), [ARIA guidance](https://www.w3.org/WAI/ARIA/apg/practices/read-me-first/).
+- **Status (4.1.3):** expose qualifying status messages through appropriate roles/properties without moving focus. Choose announcement urgency for the task; not every DOM update needs a live announcement. [Status messages](https://www.w3.org/WAI/WCAG22/Understanding/status-messages.html).
+- **Version discipline:** 4.1.1 Parsing was removed from WCAG 2.2. Code validation can still find defects, but it is not that removed success criterion. See [W3C's version overview](https://www.w3.org/WAI/standards-guidelines/wcag/).
+
+**Example/check:** inspect the accessibility tree and use a screen reader through a changed permission, open dialog, and result message. Verify accurate names/state, usable focus behavior, and announcements that neither omit important feedback nor drown it in routine updates.
 
 ## Completion
 
-Run automated checks and representative keyboard and screen-reader journeys, including the blocked/error/recovery paths. Report the tested scope and remaining unknowns separately from implementation recommendations. Use the [review record](review-checklist.md) to keep evidence attached to each result.
+For each scoped criterion, record **pass**, **fail**, **not tested**, or **not applicable with a reason**, with page/state, task, browser, assistive technology, evidence, and unresolved issues. Combine automated checks with representative keyboard and screen-reader journeys, including blocked/error/recovery paths. Untested criteria remain unknown. Use the [review record](review-checklist.md) and keep recommendations separate from evidence of conformance.
