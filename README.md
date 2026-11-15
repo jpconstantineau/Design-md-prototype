@@ -242,3 +242,26 @@ Research used public publisher material, not the complete paid standards. All he
 priority mappings, and accessibility variants are project adaptations, not certified or
 standard-mandated palettes. Deployment in a real control room requires the site's alarm
 philosophy, full standards review, and operator evaluation under actual lighting and displays.
+
+## Reusable design standards skill
+
+The repository-local [design-standards skill](.agents/skills/design-standards/SKILL.md)
+routes interface and DESIGN.md work to separate references for ISO 9241-11,
+-110, -112, and -210; historical withdrawn ISO 9241-151; WCAG 2.2 A/AA; ISA-101;
+EEMUA 201; IEC 62682:2022; Material 3; and Tufte-inspired evidence presentation.
+It includes a practical web baseline, a review checklist, and an illustrative
+DESIGN.md file, without changing the playground themes.
+
+Google's DESIGN.md alpha specification is bundled at a pinned commit with its Apache
+license and provenance. The skill's original material remains MIT licensed. Copy the
+entire skill folder, including licenses and references, when reusing it elsewhere.
+
+Verify bundled source integrity and local resource links without dependencies:
+
+```sh
+node .agents/skills/design-standards/scripts/verify-bundle.mjs
+```
+
+This check is not a DESIGN.md parser or an accessibility audit. The
+[DESIGN.md guide](.agents/skills/design-standards/references/design-md.md) describes
+the separate validation checks and their limits.
