@@ -16,6 +16,7 @@ Record the artifact/revision, audience, task, affected screens, current design s
 | Attention and alerts | Important exceptions remain noticeable and understandable without color alone. | [ISA-101 context](isa-101.md), [HSE application](hse-control-systems.md) |
 | Consistency and navigation | Repeated behavior, regions, and tokens agree; navigation and object selection remain distinct at narrow width. | [Material 3 when selected](material-3.md), [Presentation](iso-9241-112.md) |
 | Accessibility | Complete task works with keyboard and representative screen reader; applicable visual, input, error, and state criteria have evidence. | [WCAG 2.2](wcag-22.md) |
+| Evidence quality, when comparing data | Reader can justify the intended comparison or conclusion from the displayed data and its context. | [Tufte-inspired principles](edward-tufte-evidence.md) |
 | Design contract | Tokens and prose agree and validation findings are reported. | [DESIGN.md](design-md.md) |
 
 Use a real task rather than asking whether a screenshot "looks good." For an access-management product, an illustrative task is selecting an agent, granting Search Documents, explaining blocked Edit Document, predicting Save, and recovering from a failed save.

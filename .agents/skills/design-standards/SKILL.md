@@ -21,10 +21,11 @@ description: Design or review application interfaces using task, state, accessib
 | Accessibility planning, implementation, or a conformance question | [WCAG 2.2 A and AA](references/wcag-22.md) |
 | Operational dashboards, normal/exception emphasis, or industrial HMI context | [ISA-101: HMI scope](references/isa-101.md); for public feedback/alarm guidance, [HSE control systems](references/hse-control-systems.md) |
 | Material 3 components/tokens, or the GoDav design system | [Material 3](references/material-3.md) |
+| Charts, quantitative dashboards, or comparison tables used to draw conclusions | [Tufte-inspired presenting evidence](references/edward-tufte-evidence.md) |
 | Creating, updating, or validating a DESIGN.md file | [DESIGN.md authoring](references/design-md.md), then the relevant sections of the [pinned upstream spec](references/upstream/design-md-spec.md); adapt the [worked example](assets/DESIGN.md) |
 | Maintaining this skill or changing a source pin | [Maintenance and writing method](references/maintenance.md) |
 
-For a full dashboard review, load both ISO references, WCAG, and the review checklist; add the HMI or Material references when their conditions apply. A narrow token-file edit does not require loading every standards reference.
+For a full dashboard review, load both ISO references, WCAG, and the review checklist; add the HMI, Material, or evidence references when their conditions apply. A narrow token-file edit does not require loading every standards reference.
 
 ## Evidence boundary
 
