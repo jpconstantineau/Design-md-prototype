@@ -6,7 +6,7 @@ Use to create, update, or validate a design-system contract. This is a format gu
 
 The [canonical Google specification](https://github.com/google-labs-code/design.md/blob/main/docs/spec.md) is bundled as [design-md-spec.md](upstream/design-md-spec.md) at commit `1ed38aa9dd4451b9039f9aeb9ed1d2579edafddf`. Its format version is **alpha**, not 1.0. [Provenance and license](upstream/PROVENANCE.md) distinguish the exact upstream material from this guide.
 
-Read the pinned specification for the field or section being changed. Preserve the pin during ordinary document edits; use [maintenance](maintenance.md) for an intentional update. The format is inspired by DTCG concepts, but a DESIGN.md token tree is not itself a DTCG JSON document.
+Read the pinned specification for the field or section being changed. Preserve the pin during ordinary document edits. The format is inspired by DTCG concepts, but a DESIGN.md token tree is not itself a DTCG JSON document.
 
 ## Write the contract
 
@@ -22,7 +22,7 @@ Use semantic token names consistent with the product. The spec's recommended tok
 ## Validate and report
 
 - Run the [offline bundle verifier](../scripts/verify-bundle.mjs) after editing this skill's references or source pin. It checks bundled bytes and file links, not DESIGN.md syntax.
-- Run the pinned upstream parser/linter against the authored DESIGN.md. The verification procedure and checked tool revision live in [maintenance](maintenance.md). Inspect both errors and warnings; a zero exit code alone is insufficient because lint warnings do not fail the CLI.
+- Run the pinned upstream parser/linter against the authored DESIGN.md. Use the source commit above; its CLI package identifies as `@google/design.md` version `0.4.1`. Report the exact tool revision used. Inspect both errors and warnings; a zero exit code alone is insufficient because lint warnings do not fail the CLI.
 - Check rendered UI and complete workflows separately using [WCAG](wcag-22.md) and the [review checklist](review-checklist.md). The upstream contrast rule checks component `textColor`/`backgroundColor` pairs; it does not audit the interface.
 
 The pinned parser accepts `yaml` and `yml` fences but requires YAML content; prose-only input returns `NO_YAML_FOUND`. Prefer the documented `yaml` spelling. Parser acceptance, linter warnings, and a useful design contract are separate checks.

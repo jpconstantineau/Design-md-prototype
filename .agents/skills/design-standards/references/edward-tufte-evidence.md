@@ -2,7 +2,7 @@
 
 Use for charts, quantitative dashboards, and comparison tables when the user needs to draw a conclusion from evidence. Start with the question the display should help answer; a configuration page does not need a chart merely to apply these ideas.
 
-These five principles are this playbook's original practical application informed by Edward Tufte's work, not an exact canonical Tufte list, quoted book text, or a compliance standard. The linked first-party sources were checked on 2026-11-15. Where a notebook includes discussion, the attribution below refers to Tufte's own text, not other commenters.
+The five principles and conditional checks below are this playbook's original practical application informed by Edward Tufte's work, not an exact canonical Tufte list, quoted book text, or a compliance standard. The linked first-party sources were checked on 2026-11-15. Where a notebook includes discussion, the attribution below refers to Tufte's own text, not other commenters.
 
 ## 1. Show magnitude honestly
 
@@ -43,6 +43,41 @@ Informed by Tufte's [data documentation and inference discussion](https://www.ed
 - **Check:** verify that the simplified display preserves the conclusions and exact values needed for the task, then test the relevant [WCAG checks](wcag-22.md). A cleaner screenshot is insufficient evidence.
 
 Informed by Tufte's March 6, 2006 response in [Analytical design and human factors](https://www.edwardtufte.com/notebook/analytical-design-and-human-factors/), which distinguishes restrained design from impoverished evidence. Accessibility requirements come from WCAG and this product's needs, not a claim about Tufte's compliance guidance.
+
+## Conditional checks for richer evidence
+
+### Before choosing a visual form: establish the content and its quality
+
+- **Apply:** identify the real entities, relationships, labels, and decision-relevant fields before arranging chart frames or cards. Verify measurement definitions, calculations, coverage, and comparable populations. Add a breakdown or another variable when it changes the answer; choose detail by the task rather than a density quota. Disclose unresolved data limitations.
+- **Example:** a hypothetical 99% success figure means 990 of 1,000 requests in the stated interval. Inspect failures by endpoint if the overall rate could hide one failing operation. The useful relationship determines the display, not an empty dashboard template.
+- **Check:** trace a displayed measure to its input records and calculation; compare the aggregate with relevant groups. Record missing or incomparable evidence before making a conclusion.
+
+Huening's content-led web examples (PDF pages 63-79, identified below) prompted this application. Tufte's own [content-driven design discussion](https://www.edwardtufte.com/notebook/good-web-design-web-standards-user-testing/) supports starting with specific content and analytical tasks; his [inference guidance](https://www.edwardtufte.com/notebook/making-better-inferences-from-statistical-graphics-edward-tufte/) supports checking evidence selection and analysis. The metric checks are our implementation, not quoted rules.
+
+### When a summary hides variation: retain overview and inspectable detail
+
+- **Apply:** show the overall pattern and provide access to the observations or exceptions that explain it. When zooming or drilling down, retain an overview, selected interval, or other clear location cue. Choose readable detail on demand instead of squeezing everything into one view.
+- **Example:** an hourly queue summary opens minute-level samples while the day view marks the selected hour. The detail includes the peak that an hourly average would conceal.
+- **Check:** find a local exception, inspect its exact value, then return to the same overview and selection. Verify that aggregation has not concealed a task-critical peak or gap.
+
+Informed by the micro/macro topic in [Envisioning Information](https://www.edwardtufte.com/book/envisioning-information/) and Tufte's October 16, 2005 [contextual-zoom discussion](https://www.edwardtufte.com/notebook/sparkline-theory-and-practice-edward-tufte/). The gist prompted this additional review branch.
+
+### When visual layers compete: separate them without hiding meaning
+
+- **Apply:** distinguish observations, reference guides, and annotations with position, line treatment, labels, and restrained emphasis. Use the least emphasis that remains reliably perceptible under the applicable [WCAG checks](wcag-22.md). Keep meaningful data and interactive states legible through background bands, markers, and overlays.
+- **Example:** place an event label beside a plot and keep its reference band behind the data line; a selected interval retains clear edges and a text label rather than covering the samples.
+- **Check:** inspect overlapping and selected states at the intended size and zoom. Confirm that values, reference limits, annotations, and focus can each be identified without color alone; revise any overlap that masks evidence.
+
+Informed by Tufte's August 19, 2005 [importance-flags discussion](https://www.edwardtufte.com/notebook/sparkline-theory-and-practice-edward-tufte/) and the layering/separation topic in [Envisioning Information](https://www.edwardtufte.com/book/envisioning-information/). Accessibility is a constraint on this application, not permission to make essential content faint.
+
+## Secondary-source review
+
+Reviewed on 2026-11-15:
+
+- [Edward Tufte & Information Design For the Web](https://triux.wordpress.com/wp-content/uploads/2009/08/tufte.pdf), a 93-page presentation by **Nathan Huening**, dated **23 July 2009**, Sprocket House. It applies Tufte and quotes several other authors; it is not Tufte's own paper. Content-first planning and task-relevant detail informed the additions above. Its period screenshots and subtle visual effects are examples, not present-day accessibility prescriptions.
+- [w0rd-driven's tufte-viz gist](https://gist.github.com/w0rd-driven/62a2c8377a5dfad337116625d71b486e), a third-party fork of aparente with three Markdown files. Its overview/detail, layering, and evidence-quality themes prompted primary-source checks. Comparisons, scales, context, annotation, and decoration were already covered by the five principles. Fixed sparkline sizing, grayscale defaults, density maximization, and its numerical pass/fail test are not requirements of this playbook.
+
+The additions are independent practical paraphrases. Neither secondary source's text, figures, code, nor claimed canonical checklist is incorporated into this skill.
 
 ## Hypothetical GoDav-style example
 

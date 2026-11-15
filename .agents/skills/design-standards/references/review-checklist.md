@@ -13,7 +13,7 @@ Record the artifact/revision, audience, task, affected screens, current design s
 | Purpose and action | User can locate the relevant object and action; irrelevant UI does not obscure the job. | [Interaction](iso-9241-110.md) |
 | Scope and state | User explains what is selected, what applies now, what is pending, and why a restriction applies. | [Presentation](iso-9241-112.md) |
 | Change and recovery | User predicts the result, distinguishes pending from confirmed success, and recovers from failure with valid input retained. | [Interaction](iso-9241-110.md) |
-| Attention and alerts | Important exceptions remain noticeable and understandable without color alone. | [ISA-101 context](isa-101.md), [HSE application](hse-control-systems.md) |
+| Attention and alerts | Important exceptions remain noticeable and understandable without color alone. | [ISA-101 context](isa-101.md) |
 | Consistency and navigation | Repeated behavior, regions, and tokens agree; navigation and object selection remain distinct at narrow width. | [Material 3 when selected](material-3.md), [Presentation](iso-9241-112.md) |
 | Accessibility | Complete task works with keyboard and representative screen reader; applicable visual, input, error, and state criteria have evidence. | [WCAG 2.2](wcag-22.md) |
 | Evidence quality, when comparing data | Reader can justify the intended comparison or conclusion from the displayed data and its context. | [Tufte-inspired principles](edward-tufte-evidence.md) |

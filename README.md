@@ -247,16 +247,13 @@ philosophy, full standards review, and operator evaluation under actual lighting
 
 The repository-local [design-standards skill](.agents/skills/design-standards/SKILL.md)
 routes interface and DESIGN.md work to separate references for ISO 9241-110,
-ISO 9241-112, WCAG 2.2 A/AA, ISA-101, HSE feedback
-and alarm guidance, Material 3, and Tufte-inspired evidence presentation. It includes
-a review checklist and an illustrative
-DESIGN.md file, without changing the playground themes.
+ISO 9241-112, WCAG 2.2 A/AA, ISA-101, Material 3, and Tufte-inspired evidence
+presentation. It includes a review checklist and an illustrative DESIGN.md file,
+without changing the playground themes.
 
 Google's DESIGN.md alpha specification is bundled at a pinned commit with its Apache
 license and provenance. The skill's original material remains MIT licensed. Copy the
 entire skill folder, including licenses and references, when reusing it elsewhere.
-Its writing follows Matt Pocock's pinned writing-for-agents guidance; see the
-[maintenance record](.agents/skills/design-standards/references/maintenance.md).
 
 Verify bundled source integrity and local resource links without dependencies:
 
@@ -264,5 +261,6 @@ Verify bundled source integrity and local resource links without dependencies:
 node .agents/skills/design-standards/scripts/verify-bundle.mjs
 ```
 
-This check is not a DESIGN.md parser or an accessibility audit. The maintenance
-record describes upstream lint verification and its limits.
+This check is not a DESIGN.md parser or an accessibility audit. The
+[DESIGN.md guide](.agents/skills/design-standards/references/design-md.md) describes
+the separate validation checks and their limits.
